@@ -3,7 +3,13 @@ import './login.css'
 
 
 const LoginForm = () => {
-   return  <form>
+
+
+    const submitLogin = (e) => {
+        e.preventDefault();
+    }
+
+   return  <form onSubmit={submitLogin}>
         <div className="form-item">
             <input type="email" name="email"
                    className="form-control" placeholder="Email"
