@@ -5,6 +5,8 @@ import com.de.boederij.model.AuthProvider;
 import com.de.boederij.model.User;
 import com.de.boederij.repository.UserRepository;
 import com.de.boederij.security.UserPrincipal;
+import com.de.boederij.security.oauth2.user.OAuth2UserInfo;
+import com.de.boederij.security.oauth2.user.OAuth2UserInfoFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.InternalAuthenticationServiceException;
 import org.springframework.security.core.AuthenticationException;
