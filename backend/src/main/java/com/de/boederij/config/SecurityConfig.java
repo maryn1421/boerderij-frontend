@@ -1,6 +1,8 @@
 package com.de.boederij.config;
 
 
+import com.de.boederij.security.CustomUserDetailsService;
+import com.de.boederij.security.RestAuthenticationEntryPoint;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
