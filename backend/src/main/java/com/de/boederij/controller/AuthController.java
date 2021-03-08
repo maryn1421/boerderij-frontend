@@ -1,5 +1,6 @@
 package com.de.boederij.controller;
 
+import com.de.boederij.config.exception.BadRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
