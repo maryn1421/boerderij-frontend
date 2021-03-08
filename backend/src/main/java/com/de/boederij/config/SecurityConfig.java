@@ -3,6 +3,8 @@ package com.de.boederij.config;
 
 import com.de.boederij.security.CustomUserDetailsService;
 import com.de.boederij.security.RestAuthenticationEntryPoint;
+import com.de.boederij.security.TokenAuthenticationFilter;
+import com.de.boederij.security.oauth2.CustomOAuth2UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
