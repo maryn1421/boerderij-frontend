@@ -1,6 +1,8 @@
 import React from "react";
 import googleLogo from './img/google-logo.png'
 import { GOOGLE_AUTH_URL } from '../../constants';
+import './login.css'
+
 
 
 const SocialLogin = () => {
