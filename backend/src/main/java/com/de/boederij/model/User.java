@@ -4,8 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sun.istack.NotNull;
 
 import javax.persistence.*;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotNull;
+
 
 @Entity
 @Table(name = "users", uniqueConstraints = {
@@ -19,7 +18,6 @@ public class User {
     @Column(nullable = false)
     private String name;
 
-    @Email
     @Column(nullable = false)
     private String email;
 

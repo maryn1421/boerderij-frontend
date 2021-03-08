@@ -8,6 +8,7 @@ import com.de.boederij.payload.AuthResponse;
 import com.de.boederij.payload.LoginRequest;
 import com.de.boederij.payload.SignUpRequest;
 import com.de.boederij.repository.UserRepository;
+import com.de.boederij.security.TokenProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -22,6 +23,7 @@ import javax.validation.Valid;
 import java.net.URI;
 
 @RestController
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequestMapping("/auth")
 public class AuthController {
 

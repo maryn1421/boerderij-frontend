@@ -1,7 +1,9 @@
 package com.de.boederij.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Bean;
 
+import java.beans.BeanProperty;
 import java.util.ArrayList;
 import java.util.List;
 

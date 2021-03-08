@@ -1,6 +1,7 @@
 package com.de.boederij.security;
 
 import com.de.boederij.config.AppProperties;
+import io.jsonwebtoken.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.core.Authentication;
