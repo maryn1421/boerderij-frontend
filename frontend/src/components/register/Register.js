@@ -1,28 +1,39 @@
 import React from "react";
+import './register.css'
 
 const Register = () => {
+
+    document.body.style.backgroundImage = "url('/images/register-background.jpg')";
+
+
+
     return <div className="register__main">
-        <form >
-            <div className="form-item">
-                <input type="text" name="name"
-                       className="form-control" placeholder="name"
-                       required/>
-            </div>  <div className="form-item">
+        <div className="register__container">
+            <form >
+                <div className="form-item">
+                    <input type="text" name="name"
+                           className="form-control" placeholder="név"
+                           required/>
+                </div>  <div className="form-item">
                 <input type="email" name="email"
-                       className="form-control" placeholder="Email"
+                       className="form-control" placeholder="email"
                        required/>
             </div>
-            <div className="form-item">
-                <input type="password" name="password"
-                       className="form-control" placeholder="Password"
-                       required/>
-            </div>
-            <div className="form-item">
-                <input type="password" name="password"
-                       className="form-control" placeholder="Password"
-                       required/>
-            </div>
-        </form>
+                <div className="form-item">
+                    <input type="password" name="password"
+                           className="form-control" placeholder="jelszó"
+                           required/>
+                </div>
+                <div className="form-item">
+                    <input type="password" name="password"
+                           className="form-control" placeholder="jelszó"
+                           required/>
+                </div>
+                <button>Regisztráció</button> <br/>
+                <button>Ugrás a belépésre</button>
+            </form>
+        </div>
+
     </div>
 }
 
