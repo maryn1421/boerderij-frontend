@@ -1,7 +1,14 @@
 .login-container {
+
     text-align: center;
+    width: 100%;
+    height: 100%;
 }
 
+
+body {
+    background-image: url("./img/farm-background.jpg");
+}
 
 .login-content {
     background: #fff;

@@ -6,10 +6,8 @@ import './login.css'
 const Login = () => {
     return <div className="login-container">
             <div className="login-content">
-                <h1 className="login-title">Login to SpringSocial</h1>
-                <SocialLogin />
+                <h1 className="login-title">Belépés</h1>
                 <div className="or-separator">
-                    <span className="or-text">OR</span>
                 </div>
                 <LoginForm />
                 <span className="signup-link">New user?</span>
