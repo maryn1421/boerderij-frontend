@@ -5,7 +5,7 @@ import Income from "./Incomes";
 const FarmIncomePage = () => {
     return <div className="farmPage__main">
         <FarmMenu/>
-        <Income />
+        <Income/>
     </div>
 }
 

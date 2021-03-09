@@ -15,11 +15,11 @@ function App() {
         </div>
         <Router>
             <Switch>
-                <Route path="/login" component={Login} />
-                <Route path="/signup" component={Register}/>
-                <Route path="/profile" component={mainPage}/>
-                <Route path="/farm" component={FarmPage}/>
-                <Route path="/farm/income" component={FarmIncomePage}/>
+                <Route exact path="/login" component={Login} />
+                <Route exact path="/signup" component={Register}/>
+                <Route exact path="/profile" component={mainPage}/>
+                <Route exact path="/farm" component={FarmPage}/>
+                <Route exact path="/farm/incomes" component={FarmIncomePage}/>
                 <Route path="/oauth2/redirect" component={OAuth2RedirectHandler}/>
             </Switch>
         </Router>

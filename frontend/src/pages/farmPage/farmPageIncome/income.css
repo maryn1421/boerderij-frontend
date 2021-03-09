@@ -1,0 +1,9 @@
+.income__Main {
+    margin-left: auto;
+    margin-right: auto;
+    width: 70vw;
+    color: white;
+    border: 2px solid rgba(0, 0, 0, 0.27);
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.27);
+}
