@@ -41,7 +41,7 @@ public class IncomeController {
     @PreAuthorize("hasRole('USER')")
     @GetMapping("/{user_id}/{from}/{to}")
     public List<Income> getAllCostsBetweenDates(@PathVariable("user_id") Long userId, @PathVariable("from") Date from, @PathVariable("to") Date to) {
-        return incomeRepository.getAllByDateBetween(from, to);
+        return incomeRepository.getAllByUserIdAndDateBetween(userId, from, to);
     }
 
     @PreAuthorize("hasRole('USER')")

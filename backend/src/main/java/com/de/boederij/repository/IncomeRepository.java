@@ -16,7 +16,7 @@ public interface IncomeRepository extends JpaRepository<Income, Long> {
 
     List<Income> getAllByUserIdAndDate(Long userId, Date date);
 
-    List<Income> getAllByDateBetween(Date from, Date to);
+    List<Income> getAllByUserIdAndDateBetween(Long userId, Date from, Date to);
 
     List<Income> getAllByUserIdAndId(Long userId, Long costId);
 }

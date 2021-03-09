@@ -15,7 +15,7 @@ public interface CostRepository extends JpaRepository<Cost, Long> {
 
     List<Cost> getAllByUserIdAndDate(Long userId, Date date);
 
-    List<Cost> getAllByDateBetween(Date from, Date to);
+    List<Cost> getAllByUserIdAndDateBetween(Long userId,Date from, Date to);
 
     List<Cost> getAllByUserIdAndName(Long userId, String name);
 
