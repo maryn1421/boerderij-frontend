@@ -43,7 +43,7 @@ public class AnimalController {
     }
 
     @PreAuthorize("hasRole('USER')")
-    @PostMapping("/{user_id}/add")
+    @PostMapping("/add")
     public ResponseEntity<String> addAnimalByUserId(@RequestBody AnimalRequest animalRequest) {
 
         Animal animalObject = new Animal();
