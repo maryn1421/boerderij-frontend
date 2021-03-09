@@ -2,14 +2,14 @@ package com.de.boederij.controller;
 
 import com.de.boederij.model.Animal;
 import com.de.boederij.model.Cost;
+import com.de.boederij.payload.CostRequest;
 import com.de.boederij.repository.CostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
 
@@ -50,4 +50,24 @@ public class CostController {
         return costRepository.getAllByUserIdAndId(userId, costId);
     }
 
+    @PreAuthorize("hasRole('USER')")
+    @PostMapping("/add")
+    public ResponseEntity<String> addCostByUserId(@RequestBody CostRequest costRequest) {
+        Date date = new Date();
+        Timestamp timestamp = new Timestamp(date.getTime());
+
+        Cost costObject = new Cost();
+        costObject.setName(costRequest.getName());
+        costObject.setType(costRequest.getType());
+        costObject.setUserId(costRequest.getUserId());
+        costObject.setValue(costRequest.getValue());
+        costObject.setDate(timestamp);
+        Object response = costRepository.save(costObject);
+
+        if (response.getClass().equals(Cost.class)) {
+            return ResponseEntity.ok("A kiadás hozzáadásra került!");
+        } else {
+            return ResponseEntity.badRequest().build();
+        }
+    }
 }
