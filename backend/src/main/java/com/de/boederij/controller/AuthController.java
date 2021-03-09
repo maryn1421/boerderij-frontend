@@ -50,9 +50,12 @@ public class AuthController {
         );
 
         SecurityContextHolder.getContext().setAuthentication(authentication);
-
         String token = tokenProvider.createToken(authentication);
-        return ResponseEntity.ok(new AuthResponse(token));
+        Long id = null;
+        if (userRepository.findByEmail(loginRequest.getEmail()).isPresent()) {
+            id = userRepository.findByEmail(loginRequest.getEmail()).get().getId();
+        }
+        return ResponseEntity.ok(new AuthResponse(token, id ));
     }
 
     @PostMapping("/signup")

@@ -1,5 +1,4 @@
 import React from "react";
-import SocialLogin from "./SocialLogin";
 import LoginForm from "./LoginForm";
 import './login.css'
 import {Link} from "react-router-dom";
