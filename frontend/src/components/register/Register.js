@@ -10,7 +10,6 @@ const Register = () => {
     document.body.style.backgroundImage = "url('/images/register-background.jpg')";
 
 
-
     const handleSubmit = (e) => {
         e.preventDefault()
         const password1 = document.getElementById("password1").value
@@ -46,11 +45,8 @@ const Register = () => {
         }
         catch (e) {
             new Alert("error", "Szerver hiba, próbáld újra később!").showAlert();
-
         }
     }
-
-
 
     return <div className="register__main">
         <div className="register__container">

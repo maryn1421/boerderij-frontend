@@ -39,6 +39,7 @@
     ]
   },
   "devDependencies": {
-    "react-alert": "^7.0.2"
+    "react-alert": "^7.0.2",
+    "react-cookie": "^4.0.3"
   }
 }
