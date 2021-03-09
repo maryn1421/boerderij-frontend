@@ -1,8 +1,6 @@
 package com.de.boederij.controller;
 
-import com.de.boederij.model.Cost;
 import com.de.boederij.model.Income;
-import com.de.boederij.payload.CostRequest;
 import com.de.boederij.payload.IncomeRequest;
 import com.de.boederij.repository.IncomeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -66,7 +64,7 @@ public class IncomeController {
         Object response = incomeRepository.save(incomeObject);
 
         if (response.getClass().equals(Income.class)) {
-            return ResponseEntity.ok("A bevétel hozzáadásra került!");
+            return ResponseEntity.ok("A bevétel sikeresen hozzáadásra került!");
         } else {
             return ResponseEntity.badRequest().build();
         }

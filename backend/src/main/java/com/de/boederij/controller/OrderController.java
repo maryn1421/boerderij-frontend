@@ -1,14 +1,12 @@
 package com.de.boederij.controller;
 
-import com.de.boederij.model.Cost;
 import com.de.boederij.model.Order;
+import com.de.boederij.payload.OrderRequest;
 import com.de.boederij.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 import java.util.List;
@@ -48,6 +46,21 @@ public class OrderController {
     @GetMapping("/{user_id}/{cost_id}")
     public List<Order> getAllCostsBetweenDates(@PathVariable("user_id") Long userId, @PathVariable("cost_id") Long costId) {
         return orderRepository.getAllByUserIdAndId(userId, costId);
+    }
+
+    @PreAuthorize("hasRole('USER')")
+    @PostMapping("/add")
+    public ResponseEntity<String> addOrderByUserId(@RequestBody OrderRequest orderRequest) {
+        Order orderObject = new Order();
+        orderObject.setUserId(orderRequest.getUserId());
+        orderObject.setName(orderRequest.getName());
+        Object response = orderRepository.save(orderObject);
+
+        if (response.getClass().equals(Order.class)) {
+            return ResponseEntity.ok("A rendelés sikeresen hozzáadásra került!");
+        } else {
+            return ResponseEntity.badRequest().build();
+        }
     }
 
 }

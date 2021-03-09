@@ -65,7 +65,7 @@ public class CostController {
         Object response = costRepository.save(costObject);
 
         if (response.getClass().equals(Cost.class)) {
-            return ResponseEntity.ok("A kiadás hozzáadásra került!");
+            return ResponseEntity.ok("A kiadás sikeresen hozzáadásra került!");
         } else {
             return ResponseEntity.badRequest().build();
         }
