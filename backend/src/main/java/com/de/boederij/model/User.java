@@ -2,6 +2,7 @@ package com.de.boederij.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sun.istack.NotNull;
+import lombok.Data;
 
 import javax.persistence.*;
 import java.util.List;
@@ -11,6 +12,7 @@ import java.util.List;
 @Table(name = "users", uniqueConstraints = {
         @UniqueConstraint(columnNames = "email")
 })
+@Data
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -45,21 +47,11 @@ public class User {
         inverseJoinColumns = @JoinColumn(name = "user_id"))
     private List<Income> incomes;
 
-    public List<Cost> getCosts() {
-        return costs;
-    }
-
-    public void setCosts(List<Cost> costs) {
-        this.costs = costs;
-    }
-
-    public List<Income> getIncomes() {
-        return incomes;
-    }
-
-    public void setIncomes(List<Income> incomes) {
-        this.incomes = incomes;
-    }
+    @OneToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "user_orders",
+        joinColumns = @JoinColumn(name = "order_id"),
+        inverseJoinColumns = @JoinColumn(name = "user_id"))
+    private List<Order> orders;
 
     @JsonIgnore
     private String password;
@@ -69,76 +61,4 @@ public class User {
     private AuthProvider provider;
 
     private String providerId;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
-    }
-
-    public Boolean getEmailVerified() {
-        return emailVerified;
-    }
-
-    public void setEmailVerified(Boolean emailVerified) {
-        this.emailVerified = emailVerified;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public AuthProvider getProvider() {
-        return provider;
-    }
-
-    public void setProvider(AuthProvider provider) {
-        this.provider = provider;
-    }
-
-    public String getProviderId() {
-        return providerId;
-    }
-
-    public void setProviderId(String providerId) {
-        this.providerId = providerId;
-    }
-
-    public List<Animal> getAnimals() {
-        return animals;
-    }
-
-    public void setAnimals(List<Animal> animals) {
-        this.animals = animals;
-    }
 }

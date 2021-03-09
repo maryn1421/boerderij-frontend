@@ -71,6 +71,7 @@ public class AuthController {
         user.setAnimals(new ArrayList<>());
         user.setCosts(new ArrayList<>());
         user.setIncomes(new ArrayList<>());
+        user.setOrders(new ArrayList<>());
 
         user.setPassword(passwordEncoder.encode(user.getPassword()));
 

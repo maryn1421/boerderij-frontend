@@ -1,10 +1,13 @@
 package com.de.boederij.model;
 
+import lombok.Generated;
+
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
-@Table(name = "cost")
-public class Cost {
+@Table(name = "orders")
+public class Order {
 
     @Id
     @GeneratedValue
@@ -14,8 +17,9 @@ public class Cost {
     private String name;
 
     @Column(nullable = false)
-    private customType type;
+    private Date date;
 
     @Column(name = "user_id")
     private Long userId;
+
 }
