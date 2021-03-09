@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
 
@@ -51,9 +52,13 @@ public class OrderController {
     @PreAuthorize("hasRole('USER')")
     @PostMapping("/add")
     public ResponseEntity<String> addOrderByUserId(@RequestBody OrderRequest orderRequest) {
+        Date date = new Date();
+        Timestamp timestamp = new Timestamp(date.getTime());
+
         Order orderObject = new Order();
         orderObject.setUserId(orderRequest.getUserId());
         orderObject.setName(orderRequest.getName());
+        orderObject.setDate(timestamp);
         Object response = orderRepository.save(orderObject);
 
         if (response.getClass().equals(Order.class)) {
