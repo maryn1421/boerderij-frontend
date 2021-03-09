@@ -1,5 +1,6 @@
 package com.de.boederij.model;
 
+import lombok.Data;
 import lombok.Generated;
 
 import javax.persistence.*;
@@ -8,6 +9,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "income")
+@Data
 public class Income {
 
     @Id
