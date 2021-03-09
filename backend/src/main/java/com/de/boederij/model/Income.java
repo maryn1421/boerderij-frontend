@@ -1,10 +1,12 @@
 package com.de.boederij.model;
 
+import lombok.Data;
 import lombok.Generated;
 
 import javax.persistence.*;
 
 @Entity
+@Data
 @Table(name = "income")
 public class Income {
 

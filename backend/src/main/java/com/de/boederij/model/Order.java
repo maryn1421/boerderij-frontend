@@ -1,11 +1,13 @@
 package com.de.boederij.model;
 
+import lombok.Data;
 import lombok.Generated;
 
 import javax.persistence.*;
 import java.util.Date;
 
 @Entity
+@Data
 @Table(name = "orders")
 public class Order {
 
