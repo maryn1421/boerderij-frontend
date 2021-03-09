@@ -1,6 +1,7 @@
 package com.de.boederij.model;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "cost")
@@ -15,6 +16,9 @@ public class Cost {
 
     @Column(nullable = false)
     private customType type;
+
+    @Column(nullable = false)
+    private Date date;
 
     @Column(name = "user_id")
     private Long userId;
