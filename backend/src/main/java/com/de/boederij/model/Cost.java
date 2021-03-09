@@ -1,9 +1,12 @@
 package com.de.boederij.model;
 
+import lombok.Data;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "cost")
+@Data
 public class Cost {
 
     @Id
