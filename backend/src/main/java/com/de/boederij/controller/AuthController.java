@@ -69,6 +69,8 @@ public class AuthController {
         user.setPassword(signUpRequest.getPassword());
         user.setProvider(AuthProvider.local);
         user.setAnimals(new ArrayList<>());
+        user.setCosts(new ArrayList<>());
+        user.setIncomes(new ArrayList<>());
 
         user.setPassword(passwordEncoder.encode(user.getPassword()));
 

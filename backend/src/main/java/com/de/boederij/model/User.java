@@ -33,6 +33,34 @@ public class User {
     inverseJoinColumns = @JoinColumn(name = "user_id"))
     private List<Animal> animals;
 
+    @OneToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "user_costs",
+        joinColumns = @JoinColumn(name = "cost_id"),
+        inverseJoinColumns = @JoinColumn(name = "user_id"))
+    private List<Cost> costs;
+
+    @OneToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "user_incomes",
+        joinColumns = @JoinColumn(name = "income_id"),
+        inverseJoinColumns = @JoinColumn(name = "user_id"))
+    private List<Income> incomes;
+
+    public List<Cost> getCosts() {
+        return costs;
+    }
+
+    public void setCosts(List<Cost> costs) {
+        this.costs = costs;
+    }
+
+    public List<Income> getIncomes() {
+        return incomes;
+    }
+
+    public void setIncomes(List<Income> incomes) {
+        this.incomes = incomes;
+    }
+
     @JsonIgnore
     private String password;
 
