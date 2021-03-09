@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sun.istack.NotNull;
 
 import javax.persistence.*;
+import java.util.List;
 
 
 @Entity
@@ -25,6 +26,12 @@ public class User {
 
     @Column(nullable = false)
     private Boolean emailVerified = false;
+
+    @OneToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "user_animals",
+    joinColumns = @JoinColumn(name = "animal_id"),
+    inverseJoinColumns = @JoinColumn(name = "user_id"))
+    private List<Animal> animals;
 
     @JsonIgnore
     private String password;
@@ -97,5 +104,13 @@ public class User {
 
     public void setProviderId(String providerId) {
         this.providerId = providerId;
+    }
+
+    public List<Animal> getAnimals() {
+        return animals;
+    }
+
+    public void setAnimals(List<Animal> animals) {
+        this.animals = animals;
     }
 }
