@@ -1,14 +1,19 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 const FarmMenu = () => {
     return   <div className="farmPage__menuContainer">
         <div className="farmPage__menu">
+
             <div className="farmPage__menuItem">
                 <p>Kiadások</p>
             </div>
-            <div className="farmPage__menuItem">
-                <p>Bevételek</p>
-            </div>
+            <Link to={'/farm/incomes'}>
+                <div className="farmPage__menuItem">
+                    <p>Bevételek</p>
+                </div>
+            </Link>
+
             <div className="farmPage__menuItem">
                 <p>Állatok</p>
             </div>

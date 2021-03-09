@@ -14,7 +14,6 @@ function App() {
         <div id={"response-container"}>
         </div>
         <Router>
-
             <Switch>
                 <Route path="/login" component={Login} />
                 <Route path="/signup" component={Register}/>
@@ -22,7 +21,6 @@ function App() {
                 <Route path="/farm" component={FarmPage}/>
                 <Route path="/farm/income" component={FarmIncomePage}/>
                 <Route path="/oauth2/redirect" component={OAuth2RedirectHandler}/>
-
             </Switch>
         </Router>
 
