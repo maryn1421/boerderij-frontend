@@ -1,0 +1,28 @@
+.response__container {
+    text-align: center;
+    margin: auto;
+}
+
+
+.alert__error {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 20%;
+    border: 2px solid red;
+    border-radius: 4px;
+    background-color: red;
+    color: white;
+    padding: 10px;
+}
+.alert__success {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 20%;
+    border: 2px solid green;
+    border-radius: 4px;
+    background-color: green;
+    color: white;
+    padding: 10px;
+}
