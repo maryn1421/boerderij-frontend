@@ -26,14 +26,18 @@ const Register = () => {
                 password: password1
             }
 
-            submitRegistration(data).then(res => console.log(res));
+            submitRegistration(data).then(res => {
+                if (res !== undefined) {
+                    new Alert("error", "Sikertelen regisztráció, az email cím már foglalt").showAlert();
+                }
+                else {
+                    new Alert("success", "Sikeres regisztráció, jelentkezz be!").showAlert();
+                }
+            });
         } else {
            new Alert("error", "A megadott jelszavaknak egyezniük kell!").showAlert();
         }
-
-
     }
-
 
     const submitRegistration = async (data) => {
         try {
@@ -41,16 +45,10 @@ const Register = () => {
                 return resp.data
         }
         catch (e) {
-            console.log(e)
+            new Alert("error", "Szerver hiba, próbáld újra később!").showAlert();
+
         }
     }
-
-
-
-
-
-
-
 
 
 
