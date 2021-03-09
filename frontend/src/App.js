@@ -1,23 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
+import {Route, Switch, BrowserRouter as Router} from 'react-router-dom';
+import Login from "./components/login/Login";
+import OAuth2RedirectHandler from './components/OAuth2RedirectHandler'
+import mainPage from "./components/mainPage/MainPage";
+import Register from "./components/register/Register";
+import '../src/components/alert/alert.css'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <div id={"response-container"}>
+        </div>
+        <Router>
+
+            <Switch>
+                <Route path="/login" component={Login} />
+                <Route path="/signup" component={Register}/>
+                <Route path="/profile" component={mainPage}/>
+                <Route path="/oauth2/redirect" component={OAuth2RedirectHandler}/>
+
+            </Switch>
+        </Router>
+
+
+
     </div>
   );
 }
