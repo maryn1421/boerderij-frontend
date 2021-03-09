@@ -27,7 +27,7 @@ const Register = () => {
             }
 
             submitRegistration(data).then(res => {
-                if (res !== undefined) {
+                if (res === undefined) {
                     new Alert("error", "Sikertelen regisztráció, az email cím már foglalt").showAlert();
                 }
                 else {
