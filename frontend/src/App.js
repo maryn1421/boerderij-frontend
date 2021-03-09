@@ -6,6 +6,7 @@ import mainPage from "./components/mainPage/MainPage";
 import Register from "./components/register/Register";
 import '../src/components/alert/alert.css'
 import FarmPage from "./pages/farmPage/FarmPage";
+import FarmIncomePage from "./pages/farmPage/farmPageIncome/FarmIncomePage";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
                 <Route path="/signup" component={Register}/>
                 <Route path="/profile" component={mainPage}/>
                 <Route path="/farm" component={FarmPage}/>
+                <Route path="/farm/income" component={FarmIncomePage}/>
                 <Route path="/oauth2/redirect" component={OAuth2RedirectHandler}/>
 
             </Switch>
