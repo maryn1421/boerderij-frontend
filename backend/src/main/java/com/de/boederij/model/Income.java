@@ -17,6 +17,9 @@ public class Income {
     private String name;
 
     @Column(nullable = false)
+    private String value;
+
+    @Column(nullable = false)
     private customType type;
 
     @Column(nullable = false)
