@@ -7,3 +7,12 @@
     border-radius: 5px;
     background-color: rgba(0, 0, 0, 0.27);
 }
+
+.income__newIncome {
+    display: grid;
+}
+
+.income__newIncome input {
+    width: 20vw;
+    margin-bottom: 2vh;
+}
