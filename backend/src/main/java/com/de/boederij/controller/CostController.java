@@ -45,12 +45,6 @@ public class CostController {
     }
 
     @PreAuthorize("hasRole('USER')")
-    @GetMapping("/{user_id}/{cost_id}")
-    public List<Cost> getAllCostsBetweenDates(@PathVariable("user_id") Long userId, @PathVariable("cost_id") Long costId) {
-        return costRepository.getAllByUserIdAndId(userId, costId);
-    }
-
-    @PreAuthorize("hasRole('USER')")
     @PostMapping("/add")
     public ResponseEntity<String> addCostByUserId(@RequestBody CostRequest costRequest) {
         Date date = new Date();

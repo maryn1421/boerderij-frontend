@@ -21,33 +21,28 @@ public class OrderController {
 
     @PreAuthorize("hasRole('USER')")
     @GetMapping("/{user_id}/all")
-    public List<Order> getAllCostsByUserId(@PathVariable("user_id") Long userId) {
+    public List<Order> getAllOrdersByUserId(@PathVariable("user_id") Long userId) {
         return orderRepository.getAllByUserId(userId);
     }
 
     @PreAuthorize("hasRole('USER')")
     @GetMapping("/{user_id}/{cost_name}")
-    public List<Order> getAllCostsByUserIdAndName(@PathVariable("user_id") Long userId, @PathVariable("cost_name") String name) {
+    public List<Order> getAllOrdersByUserIdAndName(@PathVariable("user_id") Long userId, @PathVariable("cost_name") String name) {
         return orderRepository.getAllByUserIdAndName(userId, name);
     }
 
     @PreAuthorize("hasRole('USER')")
     @GetMapping("/{user_id}/{date}")
-    public List<Order> getAllCostsByUserIdAndDate(@PathVariable("user_id") Long userId, @PathVariable("date") Date date) {
+    public List<Order> getAllOrdersByUserIdAndDate(@PathVariable("user_id") Long userId, @PathVariable("date") Date date) {
         return orderRepository.getAllByUserIdAndDate(userId, date);
     }
 
     @PreAuthorize("hasRole('USER')")
     @GetMapping("/{user_id}/{from}/{to}")
-    public List<Order> getAllCostsBetweenDates(@PathVariable("user_id") Long userId, @PathVariable("from") Date from, @PathVariable("to") Date to) {
+    public List<Order> getAllOrdersBetweenDates(@PathVariable("user_id") Long userId, @PathVariable("from") Date from, @PathVariable("to") Date to) {
         return orderRepository.getAllByUserIdAndDateBetween(userId, from, to);
     }
 
-    @PreAuthorize("hasRole('USER')")
-    @GetMapping("/{user_id}/{cost_id}")
-    public List<Order> getAllCostsBetweenDates(@PathVariable("user_id") Long userId, @PathVariable("cost_id") Long costId) {
-        return orderRepository.getAllByUserIdAndId(userId, costId);
-    }
 
     @PreAuthorize("hasRole('USER')")
     @PostMapping("/add")

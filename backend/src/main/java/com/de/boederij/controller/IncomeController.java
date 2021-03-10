@@ -27,26 +27,20 @@ public class IncomeController {
 
     @PreAuthorize("hasRole('USER')")
     @GetMapping("/{user_id}/{cost_name}")
-    public List<Income> getAllCostsByUserIdAndName(@PathVariable("user_id") Long userId, @PathVariable("cost_name") String name) {
+    public List<Income> getAllIncomesByUserIdAndName(@PathVariable("user_id") Long userId, @PathVariable("cost_name") String name) {
         return incomeRepository.getAllByUserIdAndName(userId, name);
     }
 
     @PreAuthorize("hasRole('USER')")
     @GetMapping("/{user_id}/{date}")
-    public List<Income> getAllCostsByUserIdAndDate(@PathVariable("user_id") Long userId, @PathVariable("date") Date date) {
+    public List<Income> getAllIncomesByUserIdAndDate(@PathVariable("user_id") Long userId, @PathVariable("date") Date date) {
         return incomeRepository.getAllByUserIdAndDate(userId, date);
     }
 
     @PreAuthorize("hasRole('USER')")
     @GetMapping("/{user_id}/{from}/{to}")
-    public List<Income> getAllCostsBetweenDates(@PathVariable("user_id") Long userId, @PathVariable("from") Date from, @PathVariable("to") Date to) {
+    public List<Income> getAllIncomesBetweenDates(@PathVariable("user_id") Long userId, @PathVariable("from") Date from, @PathVariable("to") Date to) {
         return incomeRepository.getAllByUserIdAndDateBetween(userId, from, to);
-    }
-
-    @PreAuthorize("hasRole('USER')")
-    @GetMapping("/{user_id}/{cost_id}")
-    public List<Income> getAllCostsBetweenDates(@PathVariable("user_id") Long userId, @PathVariable("cost_id") Long costId) {
-        return incomeRepository.getAllByUserIdAndId(userId, costId);
     }
 
     @PreAuthorize("hasRole('USER')")
