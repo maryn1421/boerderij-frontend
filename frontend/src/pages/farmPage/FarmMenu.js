@@ -24,6 +24,9 @@ const FarmMenu = () => {
                 <p>Piac</p>
             </div>
             <div className="farmPage__menuItem">
+                <p>Beállítások</p>
+            </div>
+            <div className="farmPage__menuItem">
                 <p>Kijelentkezés</p>
             </div>
         </div>
