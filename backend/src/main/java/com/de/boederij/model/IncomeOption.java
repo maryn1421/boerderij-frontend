@@ -20,6 +20,6 @@ public class IncomeOption {
     @Column(nullable = false)
     private String name;
 
-
-    private Long user_id;
+    @Column(name = "user_id")
+    private Long userId;
 }
