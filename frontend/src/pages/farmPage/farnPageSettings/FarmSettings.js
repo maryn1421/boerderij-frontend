@@ -30,8 +30,16 @@ const FarmSettings = () => {
 
     const addNewIncomeOption = async (data) => {
         try {
-            console.log(cookies.user)
             const resp = await  axios.post(API_BASE_URL + "/incomeOptions/" + cookies.user.id, data , {headers: authHeader(cookies.user)})
+            return resp.data
+        } catch (e) {
+            console.log(e)
+
+        }
+    }
+  const addNewCostOption = async (data) => {
+        try {
+            const resp = await  axios.post(API_BASE_URL + "/costOptions/" + cookies.user.id, data , {headers: authHeader(cookies.user)})
             return resp.data
         } catch (e) {
             console.log(e)
@@ -41,6 +49,18 @@ const FarmSettings = () => {
 
     const handleNewCostOption = (e) => {
         e.preventDefault()
+        const name = document.getElementById("newCostInput").value;
+        const data = {
+            name: name
+        }
+        addNewCostOption(data).then(response => {
+            if (response !== undefined) {
+                new Alert("success", response).showAlert();
+            }
+            else {
+                new Alert("error", "Hiba az új kiadási opció mentése során!").showAlert();
+            }
+        })
     }
 
     return <div className="farmSettings__main">
