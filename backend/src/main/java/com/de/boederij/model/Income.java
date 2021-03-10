@@ -23,10 +23,10 @@ public class Income {
     private Double value;
 
     @Column(nullable = false)
-    private Long incomeId;
+    private Long incomeOptionId;
 
     @Column(nullable = false)
-    private Timestamp date;
+    private Date date;
 
     @Column(name = "user_id")
     private Long userId;

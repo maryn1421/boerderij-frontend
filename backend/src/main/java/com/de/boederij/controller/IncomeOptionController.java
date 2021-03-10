@@ -15,6 +15,7 @@ import java.util.Date;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/incomeOptions")
 public class IncomeOptionController {
 
@@ -35,7 +36,7 @@ public class IncomeOptionController {
         incomeOptionObject.setUserId(user_id);
         Object response = incomeOptionRepository.save(incomeOptionObject);
         if (response.getClass().equals(IncomeOption.class)) {
-            return ResponseEntity.ok("A bevétel sikeresen hozzáadásra került!");
+            return ResponseEntity.ok("A bevételi opció sikeresen hozzáadásra került!");
         } else {
             return ResponseEntity.badRequest().build();
         }

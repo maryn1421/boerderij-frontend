@@ -3,6 +3,8 @@ package com.de.boederij.payload;
 import com.de.boederij.model.customType;
 import lombok.Data;
 
+import java.util.Date;
+
 @Data
 public class IncomeRequest {
 
@@ -10,8 +12,10 @@ public class IncomeRequest {
 
     private Double value;
 
-    private customType type;
+    private Long optionId;
 
     private Long userId;
+
+    private Date date;
 
 }

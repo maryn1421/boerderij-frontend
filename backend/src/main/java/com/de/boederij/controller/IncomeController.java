@@ -8,11 +8,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
-import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/income")
 public class IncomeController {
 
@@ -46,15 +46,12 @@ public class IncomeController {
     @PreAuthorize("hasRole('USER')")
     @PostMapping("/add")
     public ResponseEntity<String> addIncomeByUserId(@RequestBody IncomeRequest incomeRequest) {
-        Date date = new Date();
-        Timestamp timestamp = new Timestamp(date.getTime());
-
         Income incomeObject = new Income();
         incomeObject.setName(incomeRequest.getName());
-       // incomeObject.setType(incomeRequest.getType());
+        incomeObject.setIncomeOptionId(incomeRequest.getOptionId());
         incomeObject.setUserId(incomeRequest.getUserId());
         incomeObject.setValue(incomeRequest.getValue());
-        incomeObject.setDate(timestamp);
+        incomeObject.setDate(incomeRequest.getDate());
         Object response = incomeRepository.save(incomeObject);
 
         if (response.getClass().equals(Income.class)) {

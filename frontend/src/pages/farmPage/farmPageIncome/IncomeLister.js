@@ -3,12 +3,6 @@ import React from "react";
 
 const IncomeLister = (props) => {
 
-
-
-
-
-
-
     return <div className="IncomeLister__main">
         <h3>Bevételek listája:</h3>
             <div className="incomeLister__tableContainer">
@@ -26,8 +20,8 @@ const IncomeLister = (props) => {
                         <tr>
                             <td>{item.date}</td>
                             <td>{item.name}</td>
-                            <td>{item.type}</td>
-                            <td>{item.price} forint</td>
+                            <td>{item.incomeOptionId}</td>
+                            <td>{item.value} forint</td>
                         </tr>
                     ))
                     }

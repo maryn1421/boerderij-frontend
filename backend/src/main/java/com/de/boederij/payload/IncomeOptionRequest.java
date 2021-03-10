@@ -5,10 +5,5 @@ import lombok.Data;
 
 @Data
 public class IncomeOptionRequest {
-
     private String name;
-
-
-    private Long userId;
-
 }

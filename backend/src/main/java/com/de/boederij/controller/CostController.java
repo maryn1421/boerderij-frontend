@@ -52,7 +52,7 @@ public class CostController {
 
         Cost costObject = new Cost();
         costObject.setName(costRequest.getName());
-        costObject.setType(costRequest.getType());
+      //  costObject.setType(costRequest.getType());
         costObject.setUserId(costRequest.getUserId());
         costObject.setValue(costRequest.getValue());
         costObject.setDate(timestamp);
