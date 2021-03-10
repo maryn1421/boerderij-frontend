@@ -23,9 +23,12 @@ const FarmMenu = () => {
             <div className="farmPage__menuItem">
                 <p>Piac</p>
             </div>
-            <div className="farmPage__menuItem">
-                <p>Beállítások</p>
-            </div>
+            <Link to={"/farm/settings"}>
+                <div className="farmPage__menuItem">
+                    <p>Beállítások</p>
+                </div>
+            </Link>
+
             <div className="farmPage__menuItem">
                 <p>Kijelentkezés</p>
             </div>
