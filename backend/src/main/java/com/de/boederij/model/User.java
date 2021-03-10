@@ -59,6 +59,12 @@ public class User {
         inverseJoinColumns = @JoinColumn(name = "user_id"))
     private List<IncomeOption> incomeOptions;
 
+    @OneToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "user_cost_options",
+        joinColumns = @JoinColumn(name = "costOption_id"),
+        inverseJoinColumns = @JoinColumn(name = "user_id"))
+    private List<CostOption> costOptions;
+
     @JsonIgnore
     private String password;
 
