@@ -1,10 +1,8 @@
 package com.de.boederij.controller;
 
-import com.de.boederij.model.Income;
+
 import com.de.boederij.model.IncomeOption;
-import com.de.boederij.payload.IncomeRequest;
 import com.de.boederij.repository.IncomeOptionRepository;
-import com.de.boederij.repository.IncomeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
