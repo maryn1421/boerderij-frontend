@@ -2,7 +2,7 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/boederij
     username: postgres
-    password: asd123
+    password: Zolnai123
 
   jpa:
     show-sql: true

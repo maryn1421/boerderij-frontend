@@ -10,7 +10,6 @@ import java.util.Date;
 @Entity
 @Data
 @Table(name = "income")
-@Data
 public class Income {
 
     @Id
@@ -24,7 +23,7 @@ public class Income {
     private Double value;
 
     @Column(nullable = false)
-    private customType type;
+    private Long incomeId;
 
     @Column(nullable = false)
     private Timestamp date;

@@ -51,7 +51,7 @@ public class IncomeController {
 
         Income incomeObject = new Income();
         incomeObject.setName(incomeRequest.getName());
-        incomeObject.setType(incomeRequest.getType());
+       // incomeObject.setType(incomeRequest.getType());
         incomeObject.setUserId(incomeRequest.getUserId());
         incomeObject.setValue(incomeRequest.getValue());
         incomeObject.setDate(timestamp);

@@ -7,7 +7,6 @@ import java.sql.Timestamp;
 @Entity
 @Data
 @Table(name = "orders")
-@Data
 public class Order {
 
     @Id
