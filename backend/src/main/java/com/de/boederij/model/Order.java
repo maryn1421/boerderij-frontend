@@ -1,11 +1,11 @@
 package com.de.boederij.model;
 
 import lombok.Data;
-
 import javax.persistence.*;
 import java.sql.Timestamp;
 
 @Entity
+@Data
 @Table(name = "orders")
 @Data
 public class Order {

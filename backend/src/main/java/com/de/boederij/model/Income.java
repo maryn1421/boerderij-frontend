@@ -8,6 +8,7 @@ import java.sql.Timestamp;
 import java.util.Date;
 
 @Entity
+@Data
 @Table(name = "income")
 @Data
 public class Income {
