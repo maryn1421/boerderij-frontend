@@ -4,10 +4,13 @@ import lombok.Data;
 import lombok.Generated;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
+import java.util.Date;
 
 @Entity
 @Data
 @Table(name = "income")
+@Data
 public class Income {
 
     @Id
@@ -18,7 +21,13 @@ public class Income {
     private String name;
 
     @Column(nullable = false)
+    private Double value;
+
+    @Column(nullable = false)
     private customType type;
+
+    @Column(nullable = false)
+    private Timestamp date;
 
     @Column(name = "user_id")
     private Long userId;
