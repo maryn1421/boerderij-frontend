@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.Date;
 
 @Entity
 @Table(name = "cost")
@@ -21,10 +22,10 @@ public class Cost {
     private Double value;
 
     @Column(nullable = false)
-    private customType type;
+    private Long optionId;
 
     @Column(nullable = false)
-    private Timestamp date;
+    private Date date;
 
     @Column(name = "user_id")
     private Long userId;

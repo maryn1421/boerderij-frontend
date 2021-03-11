@@ -5,6 +5,10 @@ import OAuth2RedirectHandler from './components/OAuth2RedirectHandler'
 import mainPage from "./components/mainPage/MainPage";
 import Register from "./components/register/Register";
 import '../src/components/alert/alert.css'
+import FarmPage from "./pages/farmPage/FarmPage";
+import FarmIncomePage from "./pages/farmPage/farmPageIncome/FarmIncomePage";
+import FarmSettingsPage from "./pages/farmPage/farnPageSettings/FarmSettingsPage";
+import FarmCostPAge from "./pages/farmPage/farmPageCost/FarmCostPage";
 
 function App() {
   return (
@@ -12,13 +16,15 @@ function App() {
         <div id={"response-container"}>
         </div>
         <Router>
-
             <Switch>
-                <Route path="/login" component={Login} />
-                <Route path="/signup" component={Register}/>
-                <Route path="/profile" component={mainPage}/>
+                <Route exact path="/login" component={Login} />
+                <Route exact path="/signup" component={Register}/>
+                <Route exact path="/profile" component={mainPage}/>
+                <Route exact path="/farm" component={FarmPage}/>
+                <Route exact path="/farm/incomes" component={FarmIncomePage}/>
+                <Route exact path="/farm/costs" component={FarmCostPAge}/>
+                <Route exact path="/farm/settings" component={FarmSettingsPage}/>
                 <Route path="/oauth2/redirect" component={OAuth2RedirectHandler}/>
-
             </Switch>
         </Router>
 

@@ -1,0 +1,30 @@
+.farmPage__menu {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-evenly;
+    color: white;
+    width: 70vw;
+    border: 2px solid rgba(0, 0, 0, 0.27);
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.27);
+}
+
+.farmPage__menuItem p {
+    text-decoration: white;
+}
+
+
+
+
+@media (max-width: 999px) {
+    .farmPage__menu {
+        width: 100vw;
+    }
+}
+@media (max-width: 499px) {
+    .farmPage__menu {
+        width: 100vw;
+        font-size: 10px;
+    }
+}

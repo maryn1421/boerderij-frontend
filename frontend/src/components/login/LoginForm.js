@@ -22,7 +22,13 @@ const LoginForm = () => {
         }
         login(credentials).then(res => {
             if (res !== undefined) {
-                setCookies("user", res, {path: '/'})
+                let cookieData = {
+                    id: res.userId,
+                    token: btoa(res.accessToken)
+                }
+
+
+                setCookies("user", cookieData, {path: '/'})
                 window.location.href = "/farm";
             }
             else {

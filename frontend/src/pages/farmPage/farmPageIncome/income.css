@@ -1,0 +1,87 @@
+.income__Main {
+    margin-left: auto;
+    margin-right: auto;
+    width: 70vw;
+    color: white;
+    border: 2px solid rgba(0, 0, 0, 0.27);
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.27);
+}
+
+.income__newIncome {
+    display: grid;
+}
+
+.income__newIncome input {
+    width: 20vw;
+    margin-bottom: 2vh;
+}
+
+
+
+.income__select {
+    width: 20vw;
+    margin-bottom: 2vh;
+}
+
+.IncomeLister__main {
+    margin-top: 6vh;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.incomeLister__tableContainer {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 56vh;
+    overflow-y: scroll;
+
+}
+
+.income__table {
+    background-color: rgba(44, 44, 60, 0.97);
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60vw;
+    border: 2px solid rgba(0, 0, 0, 0.97) ;
+    border-radius: 15px;
+
+}
+
+.income__table tr {
+}
+
+
+
+@media (max-width: 999px) {
+    .income__Main {
+        width: 100vw;
+    }
+    .income__newIncome input {
+        width: 40vw;
+        margin-bottom: 2vh;
+    }
+    .income__select {
+        width: 40vw;
+        margin-bottom: 2vh;
+    }
+
+    .income__table {
+        width: 90vw;
+    }
+}
+
+@media (max-width: 499px) {
+    .income__newIncome input {
+        width: 60vw;
+        margin-bottom: 2vh;
+    }
+    .income__select {
+        width: 60vw;
+        margin-bottom: 2vh;
+    }
+}

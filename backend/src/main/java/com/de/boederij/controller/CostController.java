@@ -14,6 +14,7 @@ import java.util.Date;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/cost")
 public class CostController {
 
@@ -47,17 +48,13 @@ public class CostController {
     @PreAuthorize("hasRole('USER')")
     @PostMapping("/add")
     public ResponseEntity<String> addCostByUserId(@RequestBody CostRequest costRequest) {
-        Date date = new Date();
-        Timestamp timestamp = new Timestamp(date.getTime());
-
         Cost costObject = new Cost();
         costObject.setName(costRequest.getName());
-        costObject.setType(costRequest.getType());
+        costObject.setOptionId(costRequest.getOptionId());
         costObject.setUserId(costRequest.getUserId());
         costObject.setValue(costRequest.getValue());
-        costObject.setDate(timestamp);
+        costObject.setDate(costRequest.getDate());
         Object response = costRepository.save(costObject);
-
         if (response.getClass().equals(Cost.class)) {
             return ResponseEntity.ok("A kiadás sikeresen hozzáadásra került!");
         } else {
