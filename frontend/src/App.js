@@ -8,6 +8,7 @@ import '../src/components/alert/alert.css'
 import FarmPage from "./pages/farmPage/FarmPage";
 import FarmIncomePage from "./pages/farmPage/farmPageIncome/FarmIncomePage";
 import FarmSettingsPage from "./pages/farmPage/farnPageSettings/FarmSettingsPage";
+import FarmCostPAge from "./pages/farmPage/farmPageCost/FarmCostPage";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
                 <Route exact path="/profile" component={mainPage}/>
                 <Route exact path="/farm" component={FarmPage}/>
                 <Route exact path="/farm/incomes" component={FarmIncomePage}/>
+                <Route exact path="/farm/costs" component={FarmCostPAge}/>
                 <Route exact path="/farm/settings" component={FarmSettingsPage}/>
                 <Route path="/oauth2/redirect" component={OAuth2RedirectHandler}/>
             </Switch>
