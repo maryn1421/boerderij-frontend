@@ -54,3 +54,34 @@
 
 .income__table tr {
 }
+
+
+
+@media (max-width: 999px) {
+    .income__Main {
+        width: 100vw;
+    }
+    .income__newIncome input {
+        width: 40vw;
+        margin-bottom: 2vh;
+    }
+    .income__select {
+        width: 40vw;
+        margin-bottom: 2vh;
+    }
+
+    .income__table {
+        width: 90vw;
+    }
+}
+
+@media (max-width: 499px) {
+    .income__newIncome input {
+        width: 60vw;
+        margin-bottom: 2vh;
+    }
+    .income__select {
+        width: 60vw;
+        margin-bottom: 2vh;
+    }
+}

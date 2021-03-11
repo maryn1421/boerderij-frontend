@@ -17,8 +17,14 @@
 
 
 
-@media (max-width: 600px) {
+@media (max-width: 999px) {
     .farmPage__menu {
         width: 100vw;
+    }
+}
+@media (max-width: 499px) {
+    .farmPage__menu {
+        width: 100vw;
+        font-size: 10px;
     }
 }
