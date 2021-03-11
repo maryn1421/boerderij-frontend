@@ -107,7 +107,7 @@ const Income = () => {
                     <button type={"submit"}>Hozzáadás</button>
                 </form>
             </div>
-            <IncomeLister data={incomeData} />
+            <IncomeLister data={incomeData} options={options} />
 
     </div>
 

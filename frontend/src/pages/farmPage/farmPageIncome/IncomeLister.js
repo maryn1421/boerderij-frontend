@@ -3,6 +3,26 @@ import React from "react";
 
 const IncomeLister = (props) => {
 
+
+    const getOptionName = id => {
+        let name = "not found"
+        props.options.forEach(option => {
+            if (option.id === id) {
+                name =  option.name
+            }
+
+        })
+        return name;
+    }
+
+
+
+    const formatDate = date => {
+       let newDate = new Date(date)
+        return newDate.toLocaleDateString();
+    }
+
+
     return <div className="IncomeLister__main">
         <h3>Bevételek listája:</h3>
             <div className="incomeLister__tableContainer">
@@ -18,9 +38,9 @@ const IncomeLister = (props) => {
                     <tbody>
                     {props.data.map(item => (
                         <tr>
-                            <td>{item.date}</td>
+                            <td>{formatDate(item.date)}</td>
                             <td>{item.name}</td>
-                            <td>{item.incomeOptionId}</td>
+                            <td>{getOptionName(item.incomeOptionId)}</td>
                             <td>{item.value} forint</td>
                         </tr>
                     ))
