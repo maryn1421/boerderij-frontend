@@ -9,6 +9,7 @@ import FarmPage from "./pages/farmPage/FarmPage";
 import FarmIncomePage from "./pages/farmPage/farmPageIncome/FarmIncomePage";
 import FarmSettingsPage from "./pages/farmPage/farnPageSettings/FarmSettingsPage";
 import FarmCostPAge from "./pages/farmPage/farmPageCost/FarmCostPage";
+import MainPage from "./pages/mainPage/MainPage";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         </div>
         <Router>
             <Switch>
+                <Route exact path="/" component={MainPage} />
                 <Route exact path="/login" component={Login} />
                 <Route exact path="/signup" component={Register}/>
                 <Route exact path="/profile" component={mainPage}/>
