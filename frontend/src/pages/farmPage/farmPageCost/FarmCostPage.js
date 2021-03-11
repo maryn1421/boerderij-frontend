@@ -1,5 +1,6 @@
 import React from "react";
 import FarmMenu from "../FarmMenu";
+import Costs from "./Costs";
 
 
 
@@ -8,6 +9,7 @@ const FarmCostPAge = () => {
 
     return <div className="farmPage__main">
         <FarmMenu/>
+        <Costs />
     </div>
 }
 
