@@ -12,12 +12,23 @@ const MainPage = () => {
                 <h1>De Boederij</h1>
             </div>
             <div className="mainPage__menu">
-
+                <div className="mainPage__menuItem">
+                    <a href="#about">Az oldalról</a>
+                </div>
+                <div className="mainPage__menuItem">
+                    <a href="#use">Használat</a>
+                </div>
+                <div className="mainPage__menuItem">
+                    <a href="/login">Bejelentkezés</a>
+                </div>
+                <div className="mainPage__menuItem">
+                    <a href="/signup">Regisztráció</a>
+                </div>
             </div>
             <div className="mainPage_photoContainer">
                 <img className={"mainPage__photo"} src={photo} alt=""/>
             </div>
-            <div className="mainPage__aboutTheApp">
+            <div id={"about"} className="mainPage__aboutTheApp">
                 <div className="mainPage__sectionTitle">
                     <h3>Az oldalról</h3>
                     <section className={"about_text"}>
@@ -26,7 +37,7 @@ const MainPage = () => {
                     </section>
                 </div>
             </div>
-            <div className="mainPage__useTheApp">
+            <div id={"use"} className="mainPage__useTheApp">
                 <h3>Használat</h3>
                 <section className="useText">
                     Az oldal használatához egy regisztrációra van szükség (<a href="/signup">Ugrás a regisztrációs oldalra</a>). A regisztrációhoz egy email címet, a neved illetve egy minimum 6 karakterből álló jelszót kell megadnod.

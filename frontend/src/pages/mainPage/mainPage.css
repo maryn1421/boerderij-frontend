@@ -19,5 +19,23 @@
     width: 100vw;
     height: 60vh;
     border-bottom: 5px solid white;
+    border-top: 5px solid white;
 
+}
+
+
+.mainPage__menuItem {
+   margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+
+.mainPage__menuItem a {
+    text-decoration: none;
+    color: white;
+}
+
+
+.mainPage__menu {
+    display: flex;
+    justify-content: space-evenly;
 }
