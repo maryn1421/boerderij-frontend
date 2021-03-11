@@ -16,6 +16,17 @@ const IncomeLister = (props) => {
     }
 
 
+    const calculateTotal = () => {
+        let total = 0;
+        props.data.forEach(item => {
+            total += parseInt(item.value)
+        })
+
+        return total;
+
+    }
+
+
 
     const formatDate = date => {
        let newDate = new Date(date)
@@ -25,6 +36,9 @@ const IncomeLister = (props) => {
 
     return <div className="IncomeLister__main">
         <h3>Bevételek listája:</h3>
+        <div className="income__total">
+            <p>Bevételek száma: {props.data.length}    Bevételek összértéke: {calculateTotal()}</p>
+        </div>
             <div className="incomeLister__tableContainer">
                 <table className={"income__table"}>
                         <thead>
