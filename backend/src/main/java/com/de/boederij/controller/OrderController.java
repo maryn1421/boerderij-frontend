@@ -47,13 +47,10 @@ public class OrderController {
     @PreAuthorize("hasRole('USER')")
     @PostMapping("/add")
     public ResponseEntity<String> addOrderByUserId(@RequestBody OrderRequest orderRequest) {
-        Date date = new Date();
-        Timestamp timestamp = new Timestamp(date.getTime());
-
         Order orderObject = new Order();
         orderObject.setUserId(orderRequest.getUserId());
         orderObject.setName(orderRequest.getName());
-        orderObject.setDate(timestamp);
+        orderObject.setDate(orderRequest.getDate());
         Object response = orderRepository.save(orderObject);
 
         if (response.getClass().equals(Order.class)) {
