@@ -10,6 +10,7 @@ import FarmIncomePage from "./pages/farmPage/farmPageIncome/FarmIncomePage";
 import FarmSettingsPage from "./pages/farmPage/farnPageSettings/FarmSettingsPage";
 import FarmCostPAge from "./pages/farmPage/farmPageCost/FarmCostPage";
 import MainPage from "./pages/mainPage/MainPage";
+import FarmOrderPage from "./pages/farmPage/farmPageOrder/FarmOrderPage";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
                 <Route exact path="/farm/incomes" component={FarmIncomePage}/>
                 <Route exact path="/farm/costs" component={FarmCostPAge}/>
                 <Route exact path="/farm/settings" component={FarmSettingsPage}/>
+                <Route exact path="/farm/orders" component={FarmOrderPage}/>
                 <Route path="/oauth2/redirect" component={OAuth2RedirectHandler}/>
             </Switch>
         </Router>
