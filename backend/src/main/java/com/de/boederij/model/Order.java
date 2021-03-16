@@ -3,6 +3,7 @@ package com.de.boederij.model;
 import lombok.Data;
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.Date;
 
 @Entity
 @Data
@@ -17,7 +18,7 @@ public class Order {
     private String name;
 
     @Column(nullable = false)
-    private Timestamp date;
+    private Date date;
 
     @Column(name = "user_id")
     private Long userId;

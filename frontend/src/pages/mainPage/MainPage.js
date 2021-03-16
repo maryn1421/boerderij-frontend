@@ -9,7 +9,7 @@ const MainPage = () => {
 
     return <div className="mainPage">
             <div className="mainPage__title">
-                <h1>De Boederij</h1>
+                <h1>De Boerderij</h1>
             </div>
             <div className="mainPage__menu">
                 <div className="mainPage__menuItem">
