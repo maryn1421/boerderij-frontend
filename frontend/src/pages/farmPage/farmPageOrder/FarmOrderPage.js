@@ -1,5 +1,6 @@
 import React from "react";
 import FarmMenu from "../FarmMenu";
+import Orders from "./Orders";
 
 
 const FarmOrderPage = () => {
@@ -7,6 +8,7 @@ const FarmOrderPage = () => {
 
     return <div className="farmPage__main">
         <FarmMenu/>
+        <Orders />
     </div>
 }
 
