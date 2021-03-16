@@ -1,6 +1,7 @@
 import React from "react";
 import FarmMenu from "../FarmMenu";
 import Orders from "./Orders";
+import './order.css'
 
 
 const FarmOrderPage = () => {
