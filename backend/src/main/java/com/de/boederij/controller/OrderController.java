@@ -1,7 +1,9 @@
 package com.de.boederij.controller;
 
 import com.de.boederij.model.Order;
+import com.de.boederij.payload.OrderDay;
 import com.de.boederij.payload.OrderRequest;
+import com.de.boederij.payload.OrderResponse;
 import com.de.boederij.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -9,10 +11,15 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.Timestamp;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/order")
 public class OrderController {
 
@@ -43,6 +50,26 @@ public class OrderController {
         return orderRepository.getAllByUserIdAndDateBetween(userId, from, to);
     }
 
+    @PreAuthorize("hasRole('USER')")
+    @GetMapping("/{user_id}/orders/14")
+    public  OrderResponse getNext14DaysOrders(@PathVariable("user_id") Long userId) {
+        OrderResponse orderResponse = new OrderResponse();
+        for (int i = 0; i < 14; i++) {
+            Calendar calendar = Calendar.getInstance();
+            calendar.add(Calendar.DAY_OF_YEAR, i);
+            Date date = calendar.getTime();
+
+            List<Order> orders = orderRepository.findAllByDateAndUserId(date, userId);
+
+            OrderDay orderDay = new OrderDay(date, orders);
+
+            List<OrderDay> dayList = orderResponse.getOrderDayList();
+
+            dayList.add(orderDay);
+            orderResponse.setOrderDayList(dayList);
+        }
+       return  orderResponse;
+    }
 
     @PreAuthorize("hasRole('USER')")
     @PostMapping("/add")

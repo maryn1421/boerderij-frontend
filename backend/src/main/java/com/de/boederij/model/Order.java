@@ -18,6 +18,7 @@ public class Order {
     private String name;
 
     @Column(nullable = false)
+    @Temporal(TemporalType.DATE)
     private Date date;
 
     @Column(name = "user_id")
