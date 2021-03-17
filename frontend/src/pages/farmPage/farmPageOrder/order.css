@@ -36,6 +36,13 @@
 }
 
 
+
+.finished {
+    background-color: rgba(9, 255, 33, 0.5);
+
+}
+
+
 @media (min-width: 999px ) {
 
     .orderDay__main {

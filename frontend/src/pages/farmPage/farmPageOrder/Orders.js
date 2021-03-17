@@ -48,6 +48,13 @@ const Orders = () => {
         }
     }
 
+
+    const refresh = () => {
+        fetchData().then(resp => {
+            setOrders(resp)
+        })
+    }
+
     const handleNewOrder= (e) => {
         e.preventDefault();
         const name = document.getElementById("order__name").value;
@@ -97,6 +104,7 @@ const Orders = () => {
     if (orders.orderDayList) {
         return <div className="orders__main">
             <div className="income__newIncome">
+                <h4>Rendelés hozzáadása</h4>
                 <form onSubmit={handleNewOrder}>
                     <input id={"order__name"} required={"required"} placeholder={"rendelés neve"} type="text"/> <br/>
                     <select className={"income__select"} name="type" id="order__option">

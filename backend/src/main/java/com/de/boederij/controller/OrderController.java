@@ -13,10 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @RestController
 @CrossOrigin
@@ -51,15 +48,37 @@ public class OrderController {
     }
 
 
+    @PreAuthorize("hasRole('USER')")
+    @PutMapping("/{user_id}/finish/{order_id}")
+    public ResponseEntity<String> finishOrder(@PathVariable("user_id") Long userId, @PathVariable("order_id") Long orderId) {
+        Optional<Order> optionalOrder = orderRepository.findById(orderId);
+
+        if (optionalOrder.isPresent()) {
+            Order order = optionalOrder.get();
+            if (!order.getUserId().equals(userId)) {
+                return ResponseEntity.badRequest().build();
+            } else {
+                order.setFinished(true);
+                Object response = orderRepository.save(order);
+
+                if (response.getClass().equals(Order.class)) {
+                    return ResponseEntity.ok("A rendelés sikeresen módosításrea került!");
+                } else {
+                    return ResponseEntity.badRequest().build();
+                }
+            }
+
+        } else {
+            return ResponseEntity.badRequest().build();
+        }
 
 
-
-
+    }
 
 
     @PreAuthorize("hasRole('USER')")
     @GetMapping("/{user_id}/orders/14")
-    public  OrderResponse getNext14DaysOrders(@PathVariable("user_id") Long userId) {
+    public OrderResponse getNext14DaysOrders(@PathVariable("user_id") Long userId) {
         OrderResponse orderResponse = new OrderResponse();
         for (int i = 0; i < 14; i++) {
             Calendar calendar = Calendar.getInstance();
@@ -75,7 +94,7 @@ public class OrderController {
             dayList.add(orderDay);
             orderResponse.setOrderDayList(dayList);
         }
-       return  orderResponse;
+        return orderResponse;
     }
 
     @PreAuthorize("hasRole('USER')")
@@ -86,6 +105,8 @@ public class OrderController {
         orderObject.setName(orderRequest.getName());
         orderObject.setDate(orderRequest.getDate());
         orderObject.setFinished(false);
+        orderObject.setOptionType(orderRequest.getTypeId());
+        orderObject.setPrice(orderRequest.getPrice());
         Object response = orderRepository.save(orderObject);
 
         if (response.getClass().equals(Order.class)) {

@@ -4,7 +4,6 @@ import OrderDay from "./OrderDay";
 
 const OrderLister = (props) => {
 
-    console.log(props)
 
     return <div className="orderLister__main">
 

@@ -3,8 +3,6 @@ import Order from "./Order";
 
 const OrderDay = (props) => {
 
-    console.log(props)
-
 
     const formatDate = date => {
         let newDate = new Date(date)

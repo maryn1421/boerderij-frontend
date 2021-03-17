@@ -13,4 +13,8 @@ public class OrderRequest {
 
     private Date date;
 
+    private Integer price;
+
+    private Long typeId;
+
 }

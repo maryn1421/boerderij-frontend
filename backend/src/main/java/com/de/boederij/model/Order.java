@@ -26,6 +26,9 @@ public class Order {
     private Boolean finished;
 
     @Column(nullable = false)
+    private Integer price;
+
+    @Column(nullable = false)
     private Long optionType;
 
     @Column(name = "user_id")
