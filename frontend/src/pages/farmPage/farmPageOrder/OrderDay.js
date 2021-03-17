@@ -1,4 +1,5 @@
 import React from "react";
+import Order from "./Order";
 
 const OrderDay = (props) => {
 
@@ -13,7 +14,10 @@ const OrderDay = (props) => {
     return <div className="orderDay__main">
         <h1>{formatDate(props.data.date)}</h1>
         <div className="orderDay__orders">
-
+            {props.data.orders.map(order => {
+                    return <Order key={order.id} data={order}  />
+                }
+            )}
         </div>
     </div>
 }

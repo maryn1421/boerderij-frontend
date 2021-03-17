@@ -1,8 +1,9 @@
 package com.de.boederij.model;
 
 import lombok.Data;
+import org.springframework.boot.context.properties.bind.DefaultValue;
+
 import javax.persistence.*;
-import java.sql.Timestamp;
 import java.util.Date;
 
 @Entity
@@ -20,6 +21,12 @@ public class Order {
     @Column(nullable = false)
     @Temporal(TemporalType.DATE)
     private Date date;
+
+    @Column
+    private Boolean finished;
+
+    @Column(nullable = false)
+    private Long optionType;
 
     @Column(name = "user_id")
     private Long userId;

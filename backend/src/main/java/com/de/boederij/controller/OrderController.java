@@ -50,6 +50,13 @@ public class OrderController {
         return orderRepository.getAllByUserIdAndDateBetween(userId, from, to);
     }
 
+
+
+
+
+
+
+
     @PreAuthorize("hasRole('USER')")
     @GetMapping("/{user_id}/orders/14")
     public  OrderResponse getNext14DaysOrders(@PathVariable("user_id") Long userId) {
@@ -78,6 +85,7 @@ public class OrderController {
         orderObject.setUserId(orderRequest.getUserId());
         orderObject.setName(orderRequest.getName());
         orderObject.setDate(orderRequest.getDate());
+        orderObject.setFinished(false);
         Object response = orderRepository.save(orderObject);
 
         if (response.getClass().equals(Order.class)) {
