@@ -1,10 +1,24 @@
 import React from "react";
 import './mainPage.css'
-import photo from './mainpage1.jpg'
+import photo1 from './mainpage1.jpg'
+import photo2 from './mainpage2.jpg'
+import photo3 from './mainpage3.jpg'
+import photo4 from './mainpage4.jpg'
+import { Zoom } from "react-slideshow-image";
+import 'react-slideshow-image/dist/styles.css'
 
 const MainPage = () => {
 
-    document.body.style.backgroundColor = "black"
+    const images = [photo1, photo2, photo3, photo4];
+
+    const zoomOutProperties = {
+        duration: 5000,
+        transitionDuration: 500,
+        infinite: true,
+        indicators: true,
+        scale: 0.4,
+        arrows: true
+    };
 
 
     return <div className="mainPage">
@@ -26,7 +40,11 @@ const MainPage = () => {
                 </div>
             </div>
             <div className="mainPage_photoContainer">
-                <img className={"mainPage__photo"} src={photo} alt=""/>
+                <Zoom {...zoomOutProperties}>
+                    {images.map((each, index) => (
+                        <img key={index} className={"slider__image"} src={each}  alt={"slide-image"}/>
+                    ))}
+                </Zoom>
             </div>
             <div id={"about"} className="mainPage__aboutTheApp">
                 <div className="mainPage__sectionTitle">
