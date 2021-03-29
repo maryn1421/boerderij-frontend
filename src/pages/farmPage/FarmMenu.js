@@ -19,9 +19,11 @@ const FarmMenu = () => {
             <div className="farmPage__menuItem">
                 <p>Állatok</p>
             </div>
+            <Link to={'/farm/orders'}>
             <div className="farmPage__menuItem">
                 <p>Rendelések</p>
             </div>
+            </Link>
             <div className="farmPage__menuItem">
                 <p>Piac</p>
             </div>
