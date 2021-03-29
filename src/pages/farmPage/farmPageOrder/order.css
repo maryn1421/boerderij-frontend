@@ -36,6 +36,13 @@
 }
 
 
+.finish {
+    margin-left: 10px;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 5px;
+}
+
 
 .finished {
     background-color: rgba(9, 255, 33, 0.5);

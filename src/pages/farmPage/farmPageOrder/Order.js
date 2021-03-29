@@ -4,6 +4,8 @@ import axios from "axios";
 import {API_BASE_URL} from "../../../constants";
 import {useCookies} from "react-cookie";
 import authHeader from "../../../security/auth-header";
+import tick from './tick.svg'
+
 
 
 const Order = (props) => {
@@ -56,7 +58,7 @@ const Order = (props) => {
     let finishButton = "";
 
     if (!props.data.finished) {
-        finishButton = <span onClick={e => {finishOrder()}}> pipa</span>
+        finishButton = <span className={"finish"} onClick={e => {finishOrder()}}> ✔ </span>
     }
 
 

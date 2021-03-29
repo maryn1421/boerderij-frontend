@@ -9,8 +9,6 @@ import 'react-slideshow-image/dist/styles.css'
 
 const MainPage = () => {
 
-    document.body.style.backgroundColor = "black";
-
     const images = [photo1, photo2, photo3, photo4];
 
     const zoomOutProperties = {
