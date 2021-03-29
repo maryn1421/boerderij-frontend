@@ -4,7 +4,6 @@ import axios from "axios";
 import {API_BASE_URL} from "../../../constants";
 import {useCookies} from "react-cookie";
 import authHeader from "../../../security/auth-header";
-import tick from './tick.svg'
 
 
 
