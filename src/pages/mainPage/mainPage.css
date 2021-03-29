@@ -41,12 +41,16 @@
     margin-right: auto;
     width: 90vw;
     height: 50vh;
+    margin-bottom: 5vh;
 }
 
 .slider__image {
     height: 50vh;
     width: 90vw;
 }
+
+
+
 
 .mainPage div {
     font-family: "Roboto Light";
@@ -59,4 +63,16 @@
 a {
     text-decoration: none;
     color: black;
+}
+
+
+@media (min-width: 1200px) {
+    .slider__image {
+        height: 70vh;
+        width: 90vw;
+    }
+    .mainPage_photoContainer {
+        height: 70vh;
+    }
+
 }
