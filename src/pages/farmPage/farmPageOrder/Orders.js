@@ -121,6 +121,7 @@ const Orders = () => {
                 </form>
             </div>
             <h4>Rendelések:</h4>
+            <div className="orders__refreshButtonContainer"><button onClick={event => {refresh()}} className="refresh__button">↻</button></div>
                 <OrderLister data={orders} />
         </div>
     }
