@@ -43,6 +43,14 @@
     padding: 5px;
 }
 
+.refresh__button {
+    float: right;
+    margin-right: 5vw;
+    width: 3vw;
+    height: 3vh;
+    background-color: rgba(0, 0, 0, 0.87);
+    color: white;
+}
 
 .finished {
     background-color: rgba(9, 255, 33, 0.5);
