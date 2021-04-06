@@ -27,6 +27,13 @@ const AllOrder = () => {
     }
 
 
+    const refresh = () => {
+        fetchAllOrderByUser().then(data => {
+            setOrders(data)
+        })
+    }
+
+
     console.log(orders)
 
     let content = <div className="loading"><h1>LOADING</h1></div>
@@ -41,6 +48,8 @@ const AllOrder = () => {
                         <p><span className="red__color"> </span><span>Teljesített, de nem kifizetett</span></p>
                     </div>
                 </div>
+                <div className="orders__refreshButtonContainer"><button onClick={event => {refresh()}} className="refresh__button">↻</button></div>
+
             </div>
             <div className="allOrders__orderContainer">
                 {orders.map(order => (
