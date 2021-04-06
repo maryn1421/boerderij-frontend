@@ -145,3 +145,9 @@
     }
 
 }
+
+@media(max-width: 400px) {
+    .singleOrder__mainContainer {
+        font-size: 12px;
+    }
+}
