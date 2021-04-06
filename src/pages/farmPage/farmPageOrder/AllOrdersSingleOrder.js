@@ -38,6 +38,18 @@ const AllOrdersSingleOrder = (props) => {
             })
         }
     }
+    const handleDeleteOrder = () => {
+        if (window.confirm("biztosan törölni szeretnéd a " + props.data.name + "  nevű rendelést")) {
+            deleteOrder().then(response => {
+                if (response !== null) {
+                    new Alert("success", response).showAlert();
+                }
+                else {
+                    new Alert("error", "hiba történt").showAlert();
+                }
+            })
+        }
+    }
 
     const setOrderPaid = async () => {
         try {
@@ -52,6 +64,15 @@ const AllOrdersSingleOrder = (props) => {
     const setOrderFinished = async () => {
         try {
             const resp = await axios.put(API_BASE_URL + "/order/" + cookies.user.id + "/finish/"+ props.data.id, {}, {headers: authHeader(cookies.user)})
+            return resp.data
+        }
+        catch (e) {
+            new Alert("error", "hiba történt!").showAlert();
+        }
+    }
+    const deleteOrder = async () => {
+        try {
+            const resp = await axios.delete(API_BASE_URL + "/order/delete/"+ props.data.id, {headers: authHeader(cookies.user)})
             return resp.data
         }
         catch (e) {
@@ -86,7 +107,7 @@ const AllOrdersSingleOrder = (props) => {
         <div className="single__actionsContainer">
             {props?.data.finished ? "" : <p onClick={e => handleSetOrderFinished()}>Lezárás</p>}
             {props?.data.isPaid ? "" : <p onClick={e => {handleSetOrderPaid()}}>Fizetve</p> }
-            <p>Törlés</p>
+            <p onClick={e => handleDeleteOrder()}>Törlés</p>
         </div>
     </div>
 }
