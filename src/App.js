@@ -11,6 +11,8 @@ import FarmSettingsPage from "./pages/farmPage/farnPageSettings/FarmSettingsPage
 import FarmCostPAge from "./pages/farmPage/farmPageCost/FarmCostPage";
 import MainPage from "./pages/mainPage/MainPage";
 import FarmOrderPage from "./pages/farmPage/farmPageOrder/FarmOrderPage";
+import FarmALLOrderPage from "./pages/farmPage/farmPageOrder/FarmAllOrderPage";
+import PatchList from "./pages/mainPage/PatchList";
 
 function App() {
   return (
@@ -20,6 +22,7 @@ function App() {
         <Router>
             <Switch>
                 <Route exact path="/" component={MainPage} />
+                <Route exact path="/patch-list" component={PatchList} />
                 <Route exact path="/login" component={Login} />
                 <Route exact path="/signup" component={Register}/>
                 <Route exact path="/profile" component={mainPage}/>
@@ -28,6 +31,7 @@ function App() {
                 <Route exact path="/farm/costs" component={FarmCostPAge}/>
                 <Route exact path="/farm/settings" component={FarmSettingsPage}/>
                 <Route exact path="/farm/orders" component={FarmOrderPage}/>
+                <Route exact path="/farm/all-order" component={FarmALLOrderPage}/>
                 <Route path="/oauth2/redirect" component={OAuth2RedirectHandler}/>
             </Switch>
         </Router>

@@ -104,6 +104,7 @@ const Orders = () => {
     if (orders.orderDayList) {
         return <div className="orders__main">
             <div className="income__newIncome">
+                <a href="/farm/all-order"><h4>Összes rendelés</h4></a>
                 <h4>Rendelés hozzáadása</h4>
                 <form onSubmit={handleNewOrder}>
                     <input id={"order__name"} required={"required"} placeholder={"rendelés neve"} type="text"/> <br/>

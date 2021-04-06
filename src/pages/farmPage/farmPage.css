@@ -28,3 +28,9 @@
         font-size: 10px;
     }
 }
+@media (max-width: 350px) {
+    .farmPage__menu {
+        width: 100vw;
+        font-size: 8px;
+    }
+}

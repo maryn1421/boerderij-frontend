@@ -57,9 +57,80 @@
 
 }
 
+.allOrders__main {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100vw;
+    min-height: 30vh;
+    color: white;
+    border: 2px solid rgba(0, 0, 0, 0.27);
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.27);
+}
+.backToOrdersButton {
+    border: 2px solid black;
+    color: white;
+    background-color: black;
+    padding: 10px;
+    float: left;
+    margin-top: 2vh;
+}
 
+.allOrders__orderContainer {
+    margin-top: 10vh;
+    max-height: 80vh;
+    overflow-y: scroll;
+}
+
+.singleOrder__main {
+    border: 2px solid rgba(0, 0, 0, 0.87);
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.singleOrder__mainContainer {
+    border: 2px solid rgba(0, 0, 0, 0.87);
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgba(44, 44, 60, 0.97);
+}
+
+
+.paid {
+    background-color: green;
+}
+
+.finished__single {
+    background-color: red;
+}
+.red__color{
+    border: 2px solid red;
+    background-color: red;
+    border-radius: 2px;
+    height:8px;
+    padding: 5px;
+}
+
+
+
+.green__color {
+    border: 2px solid green;
+    background-color: green;
+    border-radius: 2px;
+    height:8px;
+    padding: 5px;
+}
+
+.single__actionsContainer {
+    display: flex;
+    justify-content: space-evenly;
+    width: 25vw;
+}
 @media (min-width: 999px ) {
-
+    .allOrders__main {
+        width: 70vw;
+    }
     .orderDay__main {
         font-size: 10px;
         border-radius: 5px;
@@ -81,4 +152,10 @@
         width: 70vw;
     }
 
+}
+
+@media(max-width: 400px) {
+    .singleOrder__mainContainer {
+        font-size: 12px;
+    }
 }
