@@ -76,3 +76,9 @@ a {
     }
 
 }
+
+@media (max-width: 350px) {
+   .mainPage__menuItem a {
+       font-size: 12px;
+   }
+}
