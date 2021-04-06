@@ -2,10 +2,8 @@ import React from 'react'
 
 
 const CostLister = (props) => {
-    console.log(props.data)
 
     const getOptionName = id => {
-        console.log(props.options, "iddddddddddd")
         let name = "not found"
         props.options.forEach(option => {
             if (option.id === id) {
