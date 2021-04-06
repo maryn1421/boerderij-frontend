@@ -52,7 +52,7 @@
 .allOrders__main {
     margin-left: auto;
     margin-right: auto;
-    width: 70vw;
+    width: 100vw;
     min-height: 30vh;
     color: white;
     border: 2px solid rgba(0, 0, 0, 0.27);
@@ -78,8 +78,24 @@
     border: 2px solid rgba(0, 0, 0, 0.87);
     display: flex;
     justify-content: space-evenly;
+
 }
 
+.singleOrder__mainContainer {
+    border: 2px solid rgba(0, 0, 0, 0.87);
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgba(44, 44, 60, 0.97);
+}
+
+
+.paid {
+    background-color: green;
+}
+
+.finished__single {
+    background-color: red;
+}
 .red__color{
     border: 2px solid red;
     background-color: red;
@@ -88,6 +104,8 @@
     padding: 5px;
 }
 
+
+
 .green__color {
     border: 2px solid green;
     background-color: green;
@@ -95,8 +113,16 @@
     height:8px;
     padding: 5px;
 }
-@media (min-width: 999px ) {
 
+.single__actionsContainer {
+    display: flex;
+    justify-content: space-evenly;
+    width: 25vw;
+}
+@media (min-width: 999px ) {
+    .allOrders__main {
+        width: 70vw;
+    }
     .orderDay__main {
         font-size: 10px;
         border-radius: 5px;

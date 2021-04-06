@@ -35,10 +35,10 @@ const AllOrder = () => {
             <div className="allOrders__backContainer"><a href="/farm/orders" className="backToOrdersButton">Vissza a rendelésekhez</a>
                 <div className="allOrders__colorContainer">
                     <div className="allOrders__color">
-                        <p><span className="red__color"> </span><span >Teljesített és fizetett</span></p>
+                        <p><span className="green__color"> </span><span >Teljesített és fizetett</span></p>
                     </div>
                     <div className="allOrders__color">
-                        <p><span className="green__color"> </span><span>Teljesített, de nem kifizetett</span></p>
+                        <p><span className="red__color"> </span><span>Teljesített, de nem kifizetett</span></p>
                     </div>
                 </div>
             </div>
