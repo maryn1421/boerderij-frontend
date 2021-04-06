@@ -33,6 +33,9 @@ const MainPage = () => {
                     <a href="#use">Használat</a>
                 </div>
                 <div className="mainPage__menuItem">
+                    <a href="/patch-list">Frissítések</a>
+                </div>
+                <div className="mainPage__menuItem">
                     <a href="/login">Bejelentkezés</a>
                 </div>
                 <div className="mainPage__menuItem">

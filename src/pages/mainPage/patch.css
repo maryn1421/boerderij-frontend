@@ -1,0 +1,57 @@
+.patch__main {
+    width: 30vw;
+    height: 20vh;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+
+.patch__container {
+    margin-top: 8vh;
+    font-family: "Roboto Light";
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.patch__description {
+    opacity: 0;
+}
+
+.patch__main:hover .patch__main {
+    opacity: 0.5;
+}
+
+.patch__main:hover .patch__description {
+    opacity: 1;
+}
+
+.back__button {
+    float: left;
+    background-color: black;
+    color: white;
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+.patchList__backContainer{
+    width: 90vw;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+.patchList__header {
+    width: 90vw;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.patchList__header h1 {
+    padding: 10px;
+    border-bottom: 2px solid black;
+}
