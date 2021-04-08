@@ -79,6 +79,22 @@ const Income = () => {
     }
 
 
+    const handleFilterChange = (e) => {
+        console.log(e.target.value)
+        if (e.target.value === "all") {
+            getIncomes().then(data => {
+                setIncomeData(data)
+            })
+        }
+        else {
+            getIncomesByOption(e.target.value).then(data => {
+                setIncomeData(data)
+            })
+        }
+
+    }
+
+
     const saveNewIncome = async data => {
         try {
         const resp = await axios.post(API_BASE_URL + "/income/add", data , {headers: authHeader(cookies.user)} )
@@ -88,6 +104,22 @@ const Income = () => {
             new Alert("error", "Szerver hiba!").showAlert();
         }
     }
+
+
+
+    const getIncomesByOption = async (optionId) => {
+        try {
+            const resp = await axios.get(API_BASE_URL + "/income/filter/" + optionId +"/" + cookies.user.id, {headers: authHeader(cookies.user)} )
+            return resp.data
+        }
+
+        catch (e) {
+            console.log(e)
+        }
+    }
+
+
+
 
     return <div className="income__Main">
             <div className="income__newIncome">
@@ -106,6 +138,17 @@ const Income = () => {
                     <input id={"income__date"} required={"required"} type="date"/> <br/>
                     <button type={"submit"}>Hozzáadás</button>
                 </form>
+            </div>
+            <div className="incomeFilter__main">
+                <div className="filter__container">
+                    <h4>Bevételek szűrése</h4>
+                    <select onChange={handleFilterChange} name="income-filter" id="income-filter">
+                        <option value="all">Összes rendelés</option>
+                        {options.map(option => (
+                            <option value={option.id}>{option.name}</option>
+                        ))}
+                    </select>
+                </div>
             </div>
             <IncomeLister data={incomeData} options={options} />
 
