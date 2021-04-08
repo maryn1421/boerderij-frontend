@@ -90,6 +90,37 @@ const Costs = () => {
         }
     }
 
+
+    const handleFilterChange = (e) => {
+        console.log(e.target.value)
+        if (e.target.value === "all") {
+            getCosts().then(data => {
+                setCostData(data)
+            })
+        }
+        else {
+            getCostByOption(e.target.value).then(data => {
+                setCostData(data)
+            })
+        }
+
+    }
+
+
+
+    const getCostByOption = async (optionId) => {
+        try {
+            const resp = await axios.get(API_BASE_URL + "/cost/filter/" + optionId +"/" + cookies.user.id, {headers: authHeader(cookies.user)} )
+            return resp.data
+        }
+
+        catch (e) {
+            console.log(e)
+        }
+    }
+
+
+
     return <div className="income__Main">
         <div className="income__newIncome">
             <h4>Új Kiadás</h4>
@@ -107,6 +138,17 @@ const Costs = () => {
                 <input id={"cost__date"} required={"required"} type="date"/> <br/>
                 <button type={"submit"}>Hozzáadás</button>
             </form>
+        </div>
+        <div className="costFilter__main">
+            <div className="costFilter__content">
+                <h4>Kiadások szűrése</h4>
+                <select onChange={handleFilterChange} name="cost-filter" id="cost-filter">
+                    <option value="all">Összes kiadás</option>
+                    {options.map(option => (
+                        <option value={option.id}>{option.name}</option>
+                    ))}
+                </select>
+            </div>
         </div>
         <CostLister data={costData} options={options} />
     </div>
