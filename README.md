@@ -23,4 +23,3 @@ password: test123
 - databese: PostgreSQL
 - security: Spring Security
 - deploy: front: Netlify, back: Heroku
-- 
