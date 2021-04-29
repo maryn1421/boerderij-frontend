@@ -13,6 +13,7 @@ import MainPage from "./pages/mainPage/MainPage";
 import FarmOrderPage from "./pages/farmPage/farmPageOrder/FarmOrderPage";
 import FarmALLOrderPage from "./pages/farmPage/farmPageOrder/FarmAllOrderPage";
 import PatchList from "./pages/mainPage/PatchList";
+import MarketPage from "./pages/marketPage/MarketPage";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
                 <Route exact path="/farm/settings" component={FarmSettingsPage}/>
                 <Route exact path="/farm/orders" component={FarmOrderPage}/>
                 <Route exact path="/farm/all-order" component={FarmALLOrderPage}/>
+                <Route exact path="/farm/market" component={MarketPage}/>
                 <Route path="/oauth2/redirect" component={OAuth2RedirectHandler}/>
             </Switch>
         </Router>
