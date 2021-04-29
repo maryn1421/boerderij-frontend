@@ -1,26 +1,79 @@
 import React from "react";
-
+import './newSale.css'
+import {useCookies} from "react-cookie";
+import axios from "axios";
+import {API_BASE_URL} from "../../../constants";
 
 const NewSale = () => {
+    const [cookies, setCookies] = useCookies("user");
+
+
+    const submitNewSale = (e) => {
+        e.preventDefault()
+        const data = {
+            title: document.getElementById("title").value,
+            description: document.getElementById("description").value,
+            type: document.getElementById("type").value,
+            province: document.getElementById("province").value,
+            city: document.getElementById("city").value,
+            price: document.getElementById("price").value,
+            startDate: document.getElementById("start-date").value,
+            endDate: document.getElementById("end-date").value,
+            userId: cookies.user.id
+        }
+
+        addNewSale(data).then(resp => {
+            if (resp.status === 201) {
+                if (resp.id) {
+                    let formData = new FormData();
+                    formData.append("file", e.target.image.files[0]);
+                    addImageToSale(formData, resp.id)
+                }
+            }
+
+
+        })
+    }
+
+
+    const addImageToSale = async (data, id) => {
+        try {
+            const response = await axios.post(API_BASE_URL + "/market/add/image/" + id, data, {headers: {"Content-Type": "multipart/form-data"}})
+            return response.data
+        } catch (e) {
+            console.log(e)
+
+        }
+    }
+
+
+    const addNewSale = async (data) => {
+        try {
+            const resp = await axios.post(API_BASE_URL + "/market/add", data)
+            return resp.data;
+        } catch (e) {
+            console.log(e)
+
+        }
+    }
+
 
     return <div className="newSale__main">
         <h1>HIRDETÉS FELADÁSA</h1>
         <div className="newSale__formContainer">
-            <form>
+            <form onSubmit={submitNewSale}>
                 <label>Hirdetés szöveg címe: </label>
-                <input type="text" name={"title"} required={"required"}/>
+                <input type="text" name={"title"} id={"title"} required={"required"}/>
 
                 <label>Hirdetés szövege: </label>
-                <input type="text" name={"description"} required={"required"}/>
+                <input type="text" name={"description"} id={"description"} required={"required"}/>
 
-                <label>Hirdetés szöveg címe: </label>
-                <input type="text" name={"title"} required={"required"}/>
 
                 <label>Típus:</label>
                 <select name="type" id="type">
-                    <option value="animal">Állat</option>
-                    <option value="food">Takarmány</option>
-                    <option value="product">Termék</option>
+                    <option value="ANIMAL">Állat</option>
+                    <option value="FOOD">Takarmány</option>
+                    <option value="PRODUCT">Termék</option>
                 </select>
                 <label>Megye:</label>
                 <select name="province" id="province">
@@ -46,20 +99,20 @@ const NewSale = () => {
                     <option value="Zala">Zala</option>
                 </select>
 
+                <label>Település:</label>
+                <input type="text" name={"city"} id={"city"} required={"required"}/>
 
                 <label>Hirdetés ára: (forint) </label>
-                <input type="number" name={"price"} required={"required"}/>
+                <input type="number" id={"price"} name={"price"} required={"required"}/>
 
-                 <label>Hirdetés kezdete: </label>
-                <input type="date" name={"price"} required={"required"}/>
+                <label>Hirdetés kezdete: </label>
+                <input type="date" name={"price"} id={"start-date"} required={"required"}/>
 
-                 <label>Hirdetés vége:</label>
-                <input type="date" name={"price"} required={"required"}/>
-
+                <label>Hirdetés vége:</label>
+                <input type="date" name={"price"} id={"end-date"} required={"required"}/>
 
                 <label>Fénykép: </label>
-                <input type="file" name={"title"} required={"required"}/>
-
+                <input type="file" name={"image"} id={"image"} required={"required"}/>
 
                 <button type={"submit"}>Feladás</button>
             </form>

@@ -1,0 +1,19 @@
+.newSale__formContainer form {
+    display: grid;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.newSale__formContainer input, select, option{
+    width: 30vw;
+    margin-bottom: 2vh;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.newSale__formContainer button {
+    width: 30vw;
+    margin-right: auto;
+    margin-left: auto;
+}
