@@ -1,0 +1,17 @@
+
+.marketMenu__menu {
+    display: flex;
+    justify-content: space-evenly;
+    width: 70vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.marketPage__main {
+    width: 70vw;
+    margin-right: auto;
+    margin-left: auto;
+    border: 5px solid black;
+    height: 100vh;
+}

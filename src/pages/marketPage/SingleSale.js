@@ -1,11 +1,10 @@
 import React from "react";
 
 
-const SingleSale = () => {
+const SingleSale = (props) => {
 
 
     return <div className="singleSale__main">
-
     </div>
 }
 
