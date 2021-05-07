@@ -17,3 +17,9 @@
     margin-right: auto;
     margin-left: auto;
 }
+
+@media (max-width: 999px) {
+    .newSale__formContainer input, select, option{
+        width: 70vw;
+    }
+}
