@@ -1,5 +1,14 @@
+.market__back {
+    background-color: #ADEFD1FF;
+}
+
+
+.marketMenu__menuItem a {
+    color: #ADEFD1FF;
+}
 
 .marketMenu__menu {
+    color: #ADEFD1FF;
     display: flex;
     justify-content: space-evenly;
     width: 70vw;
@@ -9,10 +18,12 @@
 
 
 .marketPage__main {
+    color: #ADEFD1FF;
+    background-color: #00203FFF;
     width: 70vw;
     margin-right: auto;
     margin-left: auto;
-    border: 5px solid black;
+    border: 5px solid #ADEFD1FF;
     height: 100vh;
 }
 
@@ -30,15 +41,40 @@
     overflow-y: scroll;
 }
 
+
+.sales__container::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    background-color:#00203FFF;
+}
+
+.sales__container::-webkit-scrollbar
+{
+    width: 12px;
+    background-color:#00203FFF;
+    border: 5px solid #00203FFF;
+
+}
+
+.sales__container::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #ADEFD1FF;
+}
+
 .singleSale__main {
+    color: #ADEFD1FF;
     margin-left: auto;
     margin-right: auto;
-    border: 2px solid grey;
+    border: 2px solid #ADEFD1FF;
     width: 60vw;
     height: 18vh;
 }
 
 .singleSale__bottomContainer p {
+    color: #ADEFD1FF;
     font-size: 14px;
     margin-left: 2px;
 }

@@ -28,15 +28,17 @@ const MarketPage = () => {
         }
     }
 
-    return <div className="marketPage__main">
-        <h1>PIAC - DE BOERDERIJ</h1>
-        <MarketMenu/>
-        <MarketFilter/>
-        <div className="sales__container">
-            {sales.map(sale => (
-                <SingleSale data={sale} key={sale.id}/>
-            ))}
+    return <div className="market__back">
+        <div className="marketPage__main">
+            <h1>PIAC - DE BOERDERIJ</h1>
+            <MarketMenu/>
+            <MarketFilter/>
+            <div className="sales__container">
+                {sales.map(sale => (
+                    <SingleSale data={sale} key={sale.id}/>
+                ))}
 
+            </div>
         </div>
     </div>
 }
