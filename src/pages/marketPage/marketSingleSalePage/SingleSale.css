@@ -1,0 +1,24 @@
+.marketSingleSalePage__main {
+    background-color: #ADEFD1FF;
+    width: 100vw;
+    height: 100vh;
+}
+
+
+.saleContainer {
+    width: 70vw;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.saleImage {
+    max-width: 60vw;
+    height: auto;
+    max-height: 50vh;
+}
+
+
+.saleMapContainer {
+    margin-left: auto;
+    margin-right: auto;
+}
