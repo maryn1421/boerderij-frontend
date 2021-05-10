@@ -28,6 +28,10 @@ const MarketPage = () => {
         }
     }
 
+    const getLinkToSingleSale = (id) => {
+        return "/market/sale/" + id;
+    }
+
     return <div className="market__back">
         <div className="marketPage__main">
             <h1>PIAC - DE BOERDERIJ</h1>
@@ -35,7 +39,7 @@ const MarketPage = () => {
             <MarketFilter/>
             <div className="sales__container">
                 {sales.map(sale => (
-                    <SingleSale data={sale} key={sale.id}/>
+                    <a href={getLinkToSingleSale(sale.id)}> <SingleSale data={sale} key={sale.id}/></a>
                 ))}
 
             </div>
