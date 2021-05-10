@@ -18,6 +18,14 @@
     margin-left: auto;
 }
 
+
+.newSale__main {
+    background-color: #ADEFD1FF;
+    width: 100vw;
+    height: 100vh;
+}
+
+
 @media (max-width: 999px) {
     .newSale__formContainer input, select, option{
         width: 70vw;
