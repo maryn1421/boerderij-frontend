@@ -15,6 +15,7 @@ import FarmALLOrderPage from "./pages/farmPage/farmPageOrder/FarmAllOrderPage";
 import PatchList from "./pages/mainPage/PatchList";
 import MarketPage from "./pages/marketPage/MarketPage";
 import NewSale from "./pages/marketPage/marketNewSale/NewSale";
+import MarketSingleSalePage from "./pages/marketPage/marketSingleSalePage/MarketSingleSalePage";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
                 <Route exact path="/farm/all-order" component={FarmALLOrderPage}/>
                 <Route exact path="/market" component={MarketPage}/>
                 <Route exact path="/market/new" component={NewSale}/>
+                <Route exact path="/market/sale/:id" component={MarketSingleSalePage}/>
                 <Route path="/oauth2/redirect" component={OAuth2RedirectHandler}/>
             </Switch>
         </Router>
