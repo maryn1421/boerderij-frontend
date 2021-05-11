@@ -3,6 +3,8 @@ import './newSale.css'
 import {useCookies} from "react-cookie";
 import axios from "axios";
 import {API_BASE_URL} from "../../../constants";
+import Alert from "../../../components/alert/alert";
+
 
 const NewSale = () => {
     const [cookies, setCookies] = useCookies("user");
@@ -34,6 +36,10 @@ const NewSale = () => {
                     addImageToSale(formData, resp.id).then(response => {
                         if (response !== undefined) {
                             document.getElementById("new-sale-form").reset()
+                            new Alert("success", "Sikeres rendelés hozzáadás").showAlert()
+                        }
+                        else {
+                            new Alert("error", "Hiba a rendelés hozzáadása során").showAlert()
                         }
                     })
                 }
