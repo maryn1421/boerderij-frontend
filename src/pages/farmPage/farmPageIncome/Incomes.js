@@ -71,6 +71,7 @@ const Income = () => {
                 getIncomes().then(response => {
                     setIncomeData(response)
                 })
+                document.getElementById("new-income").reset()
             }
             else {
                 new Alert("error", "Sikertelen hozzáadás").showALert()
@@ -124,7 +125,7 @@ const Income = () => {
     return <div className="income__Main">
             <div className="income__newIncome">
                 <h4>Új Bevétel</h4>
-                <form onSubmit={submitNewIncome}>
+                <form id={"new-income"} onSubmit={submitNewIncome}>
                     <input id={"income__name"} required={"required"} placeholder={"bevétel neve"} type="text"/> <br/>
                     <select className={"income__select"} name="type" id="income__option">
                         {

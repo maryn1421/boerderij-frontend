@@ -2,10 +2,12 @@
     display: grid;
     margin-left: auto;
     margin-right: auto;
+    color: #00203FFF;
 }
 
 .newSale__formContainer input, select, option{
     width: 30vw;
+    color: #00203FFF;
     margin-bottom: 2vh;
     text-align: center;
     margin-right: auto;

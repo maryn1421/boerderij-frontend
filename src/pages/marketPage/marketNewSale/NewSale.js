@@ -8,6 +8,10 @@ const NewSale = () => {
     const [cookies, setCookies] = useCookies("user");
 
 
+    document.body.style.backgroundColor = "#ADEFD1FF";
+
+
+
     const submitNewSale = (e) => {
         e.preventDefault()
         const data = {
@@ -27,7 +31,11 @@ const NewSale = () => {
                 if (resp.id) {
                     let formData = new FormData();
                     formData.append("file", e.target.image.files[0]);
-                    addImageToSale(formData, resp.id)
+                    addImageToSale(formData, resp.id).then(response => {
+                        if (response !== undefined) {
+                            document.getElementById("new-sale-form").reset()
+                        }
+                    })
                 }
             }
 
@@ -61,7 +69,7 @@ const NewSale = () => {
     return <div className="newSale__main">
         <h1>HIRDETÉS FELADÁSA</h1>
         <div className="newSale__formContainer">
-            <form onSubmit={submitNewSale}>
+            <form id={"new-sale-form"} onSubmit={submitNewSale}>
                 <label>Hirdetés szöveg címe: </label>
                 <input type="text" name={"title"} id={"title"} required={"required"}/>
 

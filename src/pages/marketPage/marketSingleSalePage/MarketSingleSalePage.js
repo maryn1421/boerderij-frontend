@@ -7,11 +7,13 @@ import GoogleMapReact from 'google-map-react';
 
 
 
-const MarketSingleSalePage = (props) => {
+const MarketSingleSalePage = () => {
     const [sale, setSale] = useState([]);
     const [mapData, setMapData] = useState([])
 
     let {id} = useParams();
+
+    document.body.style.backgroundColor = "#ADEFD1FF";
 
 
     useEffect(() => {
@@ -81,6 +83,9 @@ const MarketSingleSalePage = (props) => {
 
     return <div className="marketSingleSalePage__main">
         <div className="saleContainer">
+            <div className="saleTitle">
+                <h1>{sale?.title}</h1>
+            </div>
             <div>
                 <img className="saleImage" src={API_BASE_URL + "/market/image/" + sale?.photoName} alt=""/>
             </div>

@@ -72,6 +72,7 @@ const Costs = () => {
                 getCosts().then(response => {
                     setCostData(response)
                 })
+                document.getElementById("new-cost").reset()
             }
             else {
                 new Alert("error", "Sikertelen hozzáadás").showALert()
@@ -124,7 +125,7 @@ const Costs = () => {
     return <div className="income__Main">
         <div className="income__newIncome">
             <h4>Új Kiadás</h4>
-            <form onSubmit={submitNewCost}>
+            <form id={"new-cost"} onSubmit={submitNewCost}>
                 <input id={"cost__name"} required={"required"} placeholder={"kiadás neve"} type="text"/> <br/>
                 <select className={"income__select"} name="type" id="cost__option">
                     {
