@@ -3,12 +3,15 @@ import axios from "axios";
 import {API_BASE_URL} from "../../constants";
 import MarketMenu from "./MarketMenu";
 import './market.css'
-import MarketFilter from "./MarketFilter";
 import SingleSale from "./SingleSale";
+import Alert from "../../components/alert/alert";
 
 
 const MarketPage = () => {
     const [sales, setSales] = useState([])
+    const [currentTypeSelect, setCurrentTypeSelect] = useState("all")
+    const [currentProvinceSelect, setCurrentProvinceSelect] = useState("all")
+    const [currentOrderSelect, setCurrentOrderSelect] = useState("asc")
 
 
     useEffect(() => {
@@ -28,6 +31,57 @@ const MarketPage = () => {
         }
     }
 
+
+    const fetchFilteredSales = async (province, type, order) => {
+        try {
+            let url = `${API_BASE_URL}/market/filter/${province}/${type}/${order}`;
+            console.log(url)
+            const resp = await axios.get(url)
+            return resp.data;
+        }
+        catch (e) {
+            console.log(e)
+        }
+    }
+
+    const handleTypeChange = (e) => {
+        setCurrentTypeSelect(e.target.value)
+        fetchFilteredSales(currentProvinceSelect, e.target.value, currentOrderSelect).then(response => {
+            if (response !== undefined) {
+                setSales(response)
+            }
+            else {
+                new Alert("error", "Hiba!")
+            }
+        })
+    }
+
+
+    const handleProvinceChange = (e) => {
+        setCurrentProvinceSelect(e.target.value)
+        fetchFilteredSales(e.target.value, currentTypeSelect, currentOrderSelect).then(response => {
+            if (response !== undefined) {
+                setSales(response)
+            }
+            else {
+                new Alert("error", "Hiba!")
+            }
+        })
+    }
+
+
+    const handleOrderChange = (e) => {
+        setCurrentOrderSelect(e.target.value)
+        fetchFilteredSales(currentProvinceSelect, currentTypeSelect, e.target.value).then(response => {
+            if (response !== undefined) {
+                setSales(response)
+            }
+            else {
+                new Alert("error", "Hiba!")
+            }
+        })
+    }
+
     const getLinkToSingleSale = (id) => {
         return "/market/sale/" + id;
     }
@@ -38,15 +92,15 @@ const MarketPage = () => {
             <MarketMenu/>
             <div className="market__filterContainer">
                 <label>Típus:</label>
-                <select name="type" id="type">
+                <select onChange={handleTypeChange} name="type" id="type">
                     <option value="all">Összes</option>
-                    <option value="ANIMAL">Állat</option>
-                    <option value="FOOD">Takarmány</option>
-                    <option value="PRODUCT">Termék</option>
+                    <option value="animal">Állat</option>
+                    <option value="food">Takarmány</option>
+                    <option value="product">Termék</option>
                 </select>
 
                 <label>Megye:</label>
-                <select name="province" id="province">
+                <select onChange={handleProvinceChange} name="province" id="province">
                     <option value="all">Összes</option>
                     <option value="Bács-kiskun">Bács-kiskun</option>
                     <option value="Baranya">Baranya</option>
@@ -71,7 +125,7 @@ const MarketPage = () => {
                 </select>
 
                 <label >Ár szerint:</label>
-                <select name="order" id="order">
+                <select onChange={handleOrderChange} name="order" id="order">
                     <option value="asc">Növekvő</option>
                     <option value="desc">Csökkenő</option>
                 </select>
