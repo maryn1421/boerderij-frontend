@@ -17,8 +17,27 @@
     max-height: 50vh;
 }
 
+.salePrice {
+    color: #00203FFF;
+    font-size: 20px;
+}
 
 .saleMapContainer {
     margin-left: auto;
     margin-right: auto;
+}
+
+
+.saleDataContainer {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    padding: 20px;
+    text-align: left;
+    border: 2px solid #00203FFF;
+    border-radius: 5px;
+    color: #00203FFF;
+}
+
+.saleTitle {
+    color: #00203FFF;
 }

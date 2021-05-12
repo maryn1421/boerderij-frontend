@@ -6,7 +6,7 @@ const FarmMenu = () => {
     const [cookies, setCookies] = useCookies("user");
 
     const logout = () => {
-        setCookies("user", null, {path: '/'})
+        setCookies("user", "no-user", {path: '/'})
         window.location.href = "/";
     }
 

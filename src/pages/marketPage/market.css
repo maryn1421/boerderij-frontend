@@ -85,6 +85,30 @@
 }
 
 
+.market__filterContainer {
+    margin-left: auto;
+    width: 55vw;
+    margin-right: auto;
+    margin-bottom: 5vh;
+    margin-top: 5vh;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+.market__filterContainer select {
+    margin-left: 1vw;
+    background-color:#00203FFF;
+    color: #ADEFD1FF;
+    display: block;
+    width: 10vw;
+}
+
+.market__filterContainer option {
+    color: #ADEFD1FF;
+}
+
+
 @media (max-width: 999px) {
     .marketPage__main {
         width: 100vw;
