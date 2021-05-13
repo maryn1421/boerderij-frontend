@@ -78,6 +78,7 @@ const Orders = () => {
                 fetchData().then(resp => {
                     setOrders(resp)
                 })
+                document.getElementById("new-order").reset()
             }
             else {
                 new Alert("error", "Sikertelen rendelés hozzáadás!").showAlert()
@@ -106,7 +107,7 @@ const Orders = () => {
             <div className="income__newIncome">
                 <a href="/farm/all-order"><h4>Összes rendelés</h4></a>
                 <h4>Rendelés hozzáadása</h4>
-                <form onSubmit={handleNewOrder}>
+                <form id={"new-order"} onSubmit={handleNewOrder}>
                     <input id={"order__name"} required={"required"} placeholder={"rendelés neve"} type="text"/> <br/>
                     <select className={"income__select"} name="type" id="order__option">
                         {

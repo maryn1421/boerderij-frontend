@@ -28,7 +28,7 @@ const LoginForm = () => {
                 }
 
 
-                setCookies("user", cookieData, {path: '/'})
+                setCookies("user", cookieData, {path: '/', maxAge: 864000000000})
                 window.location.href = "/farm";
             }
             else {

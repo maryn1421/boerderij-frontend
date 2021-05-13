@@ -1,0 +1,35 @@
+.newSale__formContainer form {
+    display: grid;
+    margin-left: auto;
+    margin-right: auto;
+    color: #00203FFF;
+}
+
+.newSale__formContainer input, select, option{
+    width: 30vw;
+    color: #00203FFF;
+    margin-bottom: 2vh;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.newSale__formContainer button {
+    width: 30vw;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+.newSale__main {
+    background-color: #ADEFD1FF;
+    width: 100vw;
+    height: 100vh;
+}
+
+
+@media (max-width: 999px) {
+    .newSale__formContainer input, select, option{
+        width: 70vw;
+    }
+}
