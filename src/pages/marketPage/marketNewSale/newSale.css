@@ -27,6 +27,20 @@
     height: 100vh;
 }
 
+.private__main {
+    font-size: 40px;
+    height: 20vh;
+    width: 50vw;
+    background-color: #f5222d;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.private__main a {
+    color: white;
+}
+
 
 @media (max-width: 999px) {
     .newSale__formContainer input, select, option{

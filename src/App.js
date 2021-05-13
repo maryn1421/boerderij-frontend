@@ -16,7 +16,6 @@ import PatchList from "./pages/mainPage/PatchList";
 import MarketPage from "./pages/marketPage/MarketPage";
 import NewSale from "./pages/marketPage/marketNewSale/NewSale";
 import MarketSingleSalePage from "./pages/marketPage/marketSingleSalePage/MarketSingleSalePage";
-import {useState} from "react";
 import {useCookies} from "react-cookie";
 import MarketProfile from "./pages/marketPage/MarketProfile/MarketProfile";
 
@@ -25,7 +24,7 @@ import MarketProfile from "./pages/marketPage/MarketProfile/MarketProfile";
 const PrivateRoute = ({ component, ...options }) => {
 
     const isLogged = (user) => {
-        return user !== "no-user";
+        return user !== "no-user" || !user?.token;
     }
 
 
