@@ -10,7 +10,7 @@
 
 
 .marketProfile__salesContainer {
-    margin-top: 40vh;
+    margin-top: 10vh;
     max-height: 50vh;
     overflow-y: scroll;
 }
@@ -46,8 +46,31 @@
 }
 
 
+.profile__title {
+    text-align: center;
+    color: #ADEFD1FF;
+
+}
+
+
 .trashBag {
     font-size: 18px;
+}
+
+
+.marketProfile__dataContainer {
+    color: #ADEFD1FF;
+    margin-top: 2vh;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #adefd1;
+    width: 65vw;
+    height: 30vh;
+}
+
+
+.profileIcon {
+    height: 30vh;
 }
 
 @media (max-width: 1025px) {

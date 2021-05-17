@@ -4,6 +4,7 @@ import './marketProfile.css'
 import axios from "axios";
 import {API_BASE_URL} from "../../../constants";
 import deleteICon from "./delete.png"
+import profileIcon from './icon.png'
 
 const MarketProfile = () => {
     const [cookies, setCookies] = useCookies("user")
@@ -44,8 +45,11 @@ const MarketProfile = () => {
 
 
         return <div className="marketProfile__main">
+            <div className="marketProfile__dataContainer">
+                <img className={"profileIcon"} src={profileIcon} alt="profile-icon"/>
+            </div>
             <div className="marketProfile__salesContainer">
-             <h3>Hirdetéseid:</h3>
+             <h3 className={"profile__title"}>Hirdetéseid:</h3>
                 {
                     sales.map(sale => (
                         <div className="profile__singleSale">
