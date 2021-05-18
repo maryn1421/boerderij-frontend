@@ -10,10 +10,10 @@ const MarketMenu = () => {
                 <a href="/market/new">Hirdetés feladása</a>
             </div>
             <div className="marketMenu__menuItem">
-                <a href="/market">Ősszes hirdetées</a>
+                <a href="/market">Összes hirdetés</a>
             </div>
             <div className="marketMenu__menuItem">
-                <a href="/market/search">Keresés</a>
+                <a href="/market/profile">Profil</a>
             </div>
             <div className="marketMenu__menuItem">
                 <a href="/farm">Farm</a>

@@ -109,7 +109,7 @@
 }
 
 
-@media (max-width: 999px) {
+@media (max-width: 1025px) {
     .marketPage__main {
         width: 100vw;
     }
@@ -122,5 +122,62 @@
         font-size: 12px;
         margin-left: 2px;
     }
+    .market__filterContainer {
+        margin-right: auto;
+        margin-left: auto;
+        width: 70vw;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+
+
+    .marketMenu__menu {
+        width: 100vw;
+    }
+    .market__filterContainer {
+        width: 100vw;
+        font-size: 12px;
+    }
+
+}
+
+@media (max-width: 400px) {
+    .marketPage__main {
+        width: 100vw;
+        margin-right: auto;
+        margin-left: auto;
+        height: 120vh;
+        font-size: 8px;
+    }
+
+    .marketPage__main p {
+        font-size: 10px;
+    }
+    .marketMenu__menu {
+        width: 100vw;
+        font-size: 12px;
+    }
+    .market__filterContainer {
+        width: 100vw;
+        font-size: 12px;
+    }
+}
+
+
+
+
+@media (max-width: 800px) {
+    .market__filterContainer {
+        width: 80vw;
+    }
+    .marketPage__main {
+        height: 105vh;
+    }
+
+
+
 }
 

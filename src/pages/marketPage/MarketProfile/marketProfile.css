@@ -1,0 +1,94 @@
+.marketProfile__main {
+    width: 70vw;
+    background-color:#00203FFF;
+    height: 100vh;
+    margin-right: auto;
+    margin-left: auto;
+    border: 10px solid #ADEFD1FF ;
+    border-radius: 5px;
+}
+
+
+.marketProfile__salesContainer {
+    margin-top: 10vh;
+    max-height: 50vh;
+    overflow-y: scroll;
+}
+
+.profile__singleSale {
+    color: #ADEFD1FF;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #adefd1;
+    width: 65vw;
+    height: 18vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.singleSale__rightContainer {
+    color: #ADEFD1FF;
+    border: 2px solid #ADEFD1FF;
+    width: 10vw;
+    height: 18vh;
+}
+
+.singleSale__rightContainer a {
+    color: #adefd1;
+}
+
+.profile__leftContainer {
+    width: 55vw;
+    display: flex;
+    justify-content: space-around;
+}
+
+.deleteIcon {
+    background-color:#00203FFF;
+
+}
+
+
+.profile__title {
+    text-align: center;
+    color: #ADEFD1FF;
+
+}
+
+
+.trashBag {
+    font-size: 18px;
+}
+
+
+.marketProfile__dataContainer {
+    color: #ADEFD1FF;
+    margin-top: 2vh;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #adefd1;
+    width: 65vw;
+    height: 30vh;
+    display: flex;
+}
+
+.profileDatas a {
+    color: #adefd1;
+}
+
+.profileDatas {
+    margin-left: 15vw;
+    margin-top: 5vh;
+}
+
+.profileIcon {
+    height: 30vh;
+}
+
+@media (max-width: 1025px) {
+    .marketProfile__main {
+        width: 100vw;
+    }
+
+}

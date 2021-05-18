@@ -16,15 +16,15 @@ import PatchList from "./pages/mainPage/PatchList";
 import MarketPage from "./pages/marketPage/MarketPage";
 import NewSale from "./pages/marketPage/marketNewSale/NewSale";
 import MarketSingleSalePage from "./pages/marketPage/marketSingleSalePage/MarketSingleSalePage";
-import {useState} from "react";
 import {useCookies} from "react-cookie";
+import MarketProfile from "./pages/marketPage/MarketProfile/MarketProfile";
 
 
 
 const PrivateRoute = ({ component, ...options }) => {
 
     const isLogged = (user) => {
-        return user !== "no-user";
+        return user !== "no-user" || !user?.token;
     }
 
 
@@ -61,6 +61,7 @@ const App = () => {
                 <PrivateRoute exact path="/farm/all-order" component={FarmALLOrderPage}/>
                 <Route exact path="/market" component={MarketPage}/>
                 <Route exact path="/market/new" component={NewSale}/>
+                <Route exact path="/market/profile" component={MarketProfile}/>
                 <Route exact path="/market/sale/:id" component={MarketSingleSalePage}/>
                 <Route path="/oauth2/redirect" component={OAuth2RedirectHandler}/>
             </Switch>
