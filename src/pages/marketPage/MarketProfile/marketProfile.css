@@ -34,6 +34,10 @@
     height: 18vh;
 }
 
+.singleSale__rightContainer a {
+    color: #adefd1;
+}
+
 .profile__leftContainer {
     width: 55vw;
     display: flex;
@@ -66,8 +70,17 @@
     border: 2px solid #adefd1;
     width: 65vw;
     height: 30vh;
+    display: flex;
 }
 
+.profileDatas a {
+    color: #adefd1;
+}
+
+.profileDatas {
+    margin-left: 15vw;
+    margin-top: 5vh;
+}
 
 .profileIcon {
     height: 30vh;

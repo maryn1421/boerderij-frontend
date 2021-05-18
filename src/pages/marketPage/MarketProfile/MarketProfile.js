@@ -3,12 +3,13 @@ import {useCookies} from "react-cookie";
 import './marketProfile.css'
 import axios from "axios";
 import {API_BASE_URL} from "../../../constants";
-import deleteICon from "./delete.png"
 import profileIcon from './icon.png'
+import authHeader from "../../../security/auth-header";
 
 const MarketProfile = () => {
     const [cookies, setCookies] = useCookies("user")
     const [sales, setSales] = useState([]);
+    const [user, setUser] = useState([])
 
 
     document.body.style.backgroundColor = "#ADEFD1FF";
@@ -19,6 +20,16 @@ const MarketProfile = () => {
             })
         }
     }, [])
+
+
+    useEffect(() => {
+        if (cookies.user?.token) {
+            fetchUserById().then(resp => {
+                setUser(resp)
+            })
+        }
+    }, [])
+
 
 
     const formatDate = date => {
@@ -39,14 +50,32 @@ const MarketProfile = () => {
     }
 
 
-    if (cookies.user?.token && sales) {
 
-        console.log(sales)
+    const fetchUserById = async () => {
+        try {
+            const response = await axios.get(API_BASE_URL + '/user/' + cookies.user.id , {headers: authHeader(cookies.user)})
+            return response.data
+        }
+        catch (e) {
+            console.log(e)
+        }
+    }
+
+
+    if (cookies.user?.token && sales && user) {
+        console.log(user)
+
 
 
         return <div className="marketProfile__main">
             <div className="marketProfile__dataContainer">
                 <img className={"profileIcon"} src={profileIcon} alt="profile-icon"/>
+                <div className="profileDatas">
+                    <p>{user?.name}</p>
+                    <p>{user?.email}</p>
+                    <p>hirdetések száma: {sales?.length}</p>
+                    <a href="/market/profile/edit-data">✎ Adatok módosítása</a>
+                </div>
             </div>
             <div className="marketProfile__salesContainer">
              <h3 className={"profile__title"}>Hirdetéseid:</h3>
@@ -70,7 +99,7 @@ const MarketProfile = () => {
                                 <p>👁 {sale?.viewNumber}</p>
                                 <p className={"trashBag"}>🗑</p>
                                 <p>✎</p>
-                                <p>Megtekintés</p>
+                                <a href={"/market/sale/" + sale.id}>Megtekintés</a>
                             </div>
                         </div>
 
