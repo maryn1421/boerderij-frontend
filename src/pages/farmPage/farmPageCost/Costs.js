@@ -43,7 +43,7 @@ const Costs = () => {
             const resp = await axios.get(API_BASE_URL + "/cost/" + cookies.user.id + "/all", {headers: authHeader(cookies.user)} )
             return resp.data
         } catch (e) {
-            new Alert("error", "Szerver hiba!").showAlert()
+            new Alert("error", "Server error!").showAlert()
         }
     }
 
@@ -87,7 +87,7 @@ const Costs = () => {
             return resp.data
 
         }catch (e) {
-            new Alert("error", "Szerver hiba!").showAlert();
+            new Alert("error", "Server error!").showAlert();
         }
     }
 
@@ -124,9 +124,9 @@ const Costs = () => {
 
     return <div className="income__Main">
         <div className="income__newIncome">
-            <h4>Új Kiadás</h4>
+            <h4>New expense</h4>
             <form id={"new-cost"} onSubmit={submitNewCost}>
-                <input id={"cost__name"} required={"required"} placeholder={"kiadás neve"} type="text"/> <br/>
+                <input id={"cost__name"} required={"required"} placeholder={"Name of expense"} type="text"/> <br/>
                 <select className={"income__select"} name="type" id="cost__option">
                     {
                         options.map(option => (
@@ -135,16 +135,16 @@ const Costs = () => {
                     }
 
                 </select> <br/>
-                <input id={"cost__price"} required={"required"} placeholder={"kiadás összege"} type="text"/> <br/>
+                <input id={"cost__price"} required={"required"} placeholder={"Price of expense"} type="text"/> <br/>
                 <input id={"cost__date"} required={"required"} type="date"/> <br/>
-                <button type={"submit"}>Hozzáadás</button>
+                <button type={"submit"}>Add</button>
             </form>
         </div>
         <div className="costFilter__main">
             <div className="costFilter__content">
-                <h4>Kiadások szűrése</h4>
+                <h4>Filter expenses</h4>
                 <select onChange={handleFilterChange} name="cost-filter" id="cost-filter">
-                    <option value="all">Összes kiadás</option>
+                    <option value="all">Total expenses</option>
                     {options.map(option => (
                         <option value={option.id}>{option.name}</option>
                     ))}

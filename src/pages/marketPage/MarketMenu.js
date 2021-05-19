@@ -7,13 +7,13 @@ const MarketMenu = () => {
     return <div className="marketMenu main">
         <div className="marketMenu__menu">
             <div className="marketMenu__menuItem">
-                <a href="/market/new">Hirdetés feladása</a>
+                <a href="/market/new">Add advertisement</a>
             </div>
             <div className="marketMenu__menuItem">
-                <a href="/market">Összes hirdetés</a>
+                <a href="/market">All advertisements</a>
             </div>
             <div className="marketMenu__menuItem">
-                <a href="/market/profile">Profil</a>
+                <a href="/market/profile">Profile</a>
             </div>
             <div className="marketMenu__menuItem">
                 <a href="/farm">Farm</a>

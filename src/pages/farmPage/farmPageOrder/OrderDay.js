@@ -13,6 +13,7 @@ const OrderDay = (props) => {
         <h1>{formatDate(props.data.date)}</h1>
         <div className="orderDay__orders">
             {props.data.orders.map(order => {
+                console.log(order);
                     return <Order key={order.id} data={order}  />
                 }
             )}

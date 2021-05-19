@@ -27,14 +27,14 @@ const Register = () => {
 
             submitRegistration(data).then(res => {
                 if (res === undefined) {
-                    new Alert("error", "Sikertelen regisztráció, az email cím már foglalt").showAlert();
+                    new Alert("error", "Registration failed, this email address is already in use.").showAlert();
                 }
                 else {
-                    new Alert("success", "Sikeres regisztráció, jelentkezz be!").showAlert();
+                    new Alert("success", "Registration successful, Log in!").showAlert();
                 }
             });
         } else {
-           new Alert("error", "A megadott jelszavaknak egyezniük kell!").showAlert();
+           new Alert("error", "The given passwords must match!").showAlert();
         }
     }
 
@@ -44,7 +44,7 @@ const Register = () => {
                 return resp.data
         }
         catch (e) {
-            new Alert("error", "Szerver hiba, próbáld újra később!").showAlert();
+            new Alert("error", "Server error, try again later!").showAlert();
         }
     }
 
@@ -53,27 +53,27 @@ const Register = () => {
             <form onSubmit={handleSubmit} >
                 <div className="form-item">
                     <input type="text" name="name" id={"name"}
-                           className="form-control" placeholder="név"
+                           className="form-control" placeholder="Name"
                            required/>
                 </div>  <div className="form-item">
                 <input type="email" name="email" id={"email"}
-                       className="form-control" placeholder="email"
+                       className="form-control" placeholder="Email"
                        required/>
             </div>
                 <div className="form-item">
                     <input type="password" name="password" id={"password1"}
-                           className="form-control" placeholder="jelszó"
+                           className="form-control" placeholder="Password"
                            required/>
                 </div>
                 <div className="form-item">
                     <input type="password" name="password"
                            id={"password2"}
-                           className="form-control" placeholder="jelszó"
+                           className="form-control" placeholder="Password"
                            required/>
                 </div>
-                <button type={"submit"}>Regisztráció</button> <br/>
+                <button type={"submit"}>Registration</button> <br/>
             </form>
-            <button onClick={e => window.location.href = "/login"}>Ugrás a belépésre</button>
+            <button onClick={e => window.location.href = "/login"}>Jump to login</button>
 
         </div>
 

@@ -85,13 +85,13 @@ const AllOrder = () => {
     let content = <div className="loading"><h1>LOADING</h1></div>
     if (orders != null ) {
         content = <div className="allOrders__main">
-            <div className="allOrders__backContainer"><a href="/farm/orders" className="backToOrdersButton">Vissza a rendelésekhez</a>
+            <div className="allOrders__backContainer"><a href="/farm/orders" className="backToOrdersButton">Back to orders</a>
                 <div className="allOrders__colorContainer">
                     <div className="allOrders__color">
-                        <p><span className="green__color"> </span><span >Teljesített és fizetett</span></p>
+                        <p><span className="green__color"> </span><span >Completed and payed</span></p>
                     </div>
                     <div className="allOrders__color">
-                        <p><span className="red__color"> </span><span>Teljesített, de nem kifizetett</span></p>
+                        <p><span className="red__color"> </span><span>Completed, but not payed.</span></p>
                     </div>
                 </div>
                 <div className="orders__refreshButtonContainer"><button onClick={event => {refresh()}} className="refresh__button">↻</button></div>
@@ -100,9 +100,9 @@ const AllOrder = () => {
             <div className="allOrders__filterContainer">
                 <div className="allOrders__filterContent">
                     <br/>
-                    <h4>Rendelések szűrése</h4>
+                    <h4>Filter incomes</h4>
                     <select onChange={handleFilterChange} name="filter" id="filter">
-                        <option value="all">Összes rendelés</option>
+                        <option value="all">All orders</option>
                         {options.map(option => (
                             <option value={option.id}>{option.name}</option>
                         ))}

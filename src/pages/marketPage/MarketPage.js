@@ -51,7 +51,7 @@ const MarketPage = () => {
                 setSales(response)
             }
             else {
-                new Alert("error", "Hiba!")
+                new Alert("error", "Error!")
             }
         })
     }
@@ -64,7 +64,7 @@ const MarketPage = () => {
                 setSales(response)
             }
             else {
-                new Alert("error", "Hiba!")
+                new Alert("error", "Error!")
             }
         })
     }
@@ -77,7 +77,7 @@ const MarketPage = () => {
                 setSales(response)
             }
             else {
-                new Alert("error", "Hiba!")
+                new Alert("error", "Error!")
             }
         })
     }
@@ -88,20 +88,20 @@ const MarketPage = () => {
 
     return <div className="market__back">
         <div className="marketPage__main">
-            <h1>PIAC - DE BOERDERIJ</h1>
+            <h1>MARKET - DE BOERDERIJ</h1>
             <MarketMenu/>
             <div className="market__filterContainer">
-                <label>Típus:</label>
+                <label>Type:</label>
                 <select onChange={handleTypeChange} name="type" id="type">
-                    <option value="all">Összes</option>
-                    <option value="animal">Állat</option>
-                    <option value="food">Takarmány</option>
-                    <option value="product">Termék</option>
+                    <option value="all">All</option>
+                    <option value="animal">Animal</option>
+                    <option value="food">Forage</option>
+                    <option value="product">Product</option>
                 </select>
 
-                <label>Megye:</label>
+                <label>County:</label>
                 <select onChange={handleProvinceChange} name="province" id="province">
-                    <option value="all">Összes</option>
+                    <option value="all">All</option>
                     <option value="Bács-kiskun">Bács-kiskun</option>
                     <option value="Baranya">Baranya</option>
                     <option value="Békés">Békés</option>
@@ -124,10 +124,10 @@ const MarketPage = () => {
                     <option value="Zala">Zala</option>
                 </select>
 
-                <label >Ár szerint:</label>
+                <label >By price:</label>
                 <select onChange={handleOrderChange} name="order" id="order">
-                    <option value="asc">Növekvő</option>
-                    <option value="desc">Csökkenő</option>
+                    <option value="asc">Ascending</option>
+                    <option value="desc">Descending</option>
                 </select>
 
             </div>

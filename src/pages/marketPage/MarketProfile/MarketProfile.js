@@ -73,12 +73,12 @@ const MarketProfile = () => {
                 <div className="profileDatas">
                     <p>{user?.name}</p>
                     <p>{user?.email}</p>
-                    <p>hirdetések száma: {sales?.length}</p>
-                    <a href="/market/profile/edit-data">✎ Adatok módosítása</a>
+                    <p>Number of advertisements: {sales?.length}</p>
+                    <a href="/market/profile/edit-data">✎ Modify data</a>
                 </div>
             </div>
             <div className="marketProfile__salesContainer">
-             <h3 className={"profile__title"}>Hirdetéseid:</h3>
+             <h3 className={"profile__title"}>Your advertisements:</h3>
                 {
                     sales.map(sale => (
                         <div className="profile__singleSale">
@@ -87,7 +87,7 @@ const MarketProfile = () => {
                                      alt=""/>
                                 <div className="singleSale__description">
                                     <p>{sale.title}</p>
-                                    <p>{new Intl.NumberFormat().format(sale?.price)} Forint</p>
+                                    <p>{new Intl.NumberFormat().format(sale?.price)} HUF</p>
                                     <div className="singleSale__bottomContainer">
                                         <p>{sale?.province},</p>
                                         <p>{sale?.city},</p>
@@ -99,7 +99,7 @@ const MarketProfile = () => {
                                 <p>👁 {sale?.viewNumber}</p>
                                 <p className={"trashBag"}>🗑</p>
                                 <p>✎</p>
-                                <a href={"/market/sale/" + sale.id}>Megtekintés</a>
+                                <a href={"/market/sale/" + sale.id}>View</a>
                             </div>
                         </div>
 
@@ -110,9 +110,9 @@ const MarketProfile = () => {
         </div>
     } else {
         return <div className="private__main">
-            <p>Ehhez a funkcióhoz belépés szükséges! D:</p>
-            <a href="/login">Belépés</a> <br/>
-            <a href="/market">Vissza</a>
+            <p>You need to log in first! D:</p>
+            <a href="/login">Login</a> <br/>
+            <a href="/market">Back</a>
         </div>
     }
 

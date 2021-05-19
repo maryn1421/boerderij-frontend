@@ -12,14 +12,14 @@ const AllOrdersSingleOrder = (props) => {
 
 
     const handleSetOrderPaid = () => {
-        if (window.confirm("Biztosan kifizetettre állítod a " + props?.data.name +  " nevű rendelést ")) {
+        if (window.confirm("Are you setting " + props?.data.name +  " status to payed?")) {
             setOrderPaid().then(response => {
                 if (response !== null) {
                     new Alert("success", response).showAlert();
 
                 }
                 else {
-                    new Alert("error", "hiba történt").showAlert();
+                    new Alert("error", "error").showAlert();
                 }
             })
         }
@@ -27,25 +27,25 @@ const AllOrdersSingleOrder = (props) => {
 
 
     const handleSetOrderFinished = () => {
-        if (window.confirm("biztosan lezártra állítod a " + props.data.name + "  nevű rendelést")) {
+        if (window.confirm("Are you setting" + props.data.name + " status to closed?")) {
             setOrderFinished().then(response => {
                 if (response !== null) {
                     new Alert("success", response).showAlert();
                 }
                 else {
-                    new Alert("error", "hiba történt").showAlert();
+                    new Alert("error", "error").showAlert();
                 }
             })
         }
     }
     const handleDeleteOrder = () => {
-        if (window.confirm("biztosan törölni szeretnéd a " + props.data.name + "  nevű rendelést")) {
+        if (window.confirm("Do you want to delete " + props.data.name + " ?")) {
             deleteOrder().then(response => {
                 if (response !== null) {
                     new Alert("success", response).showAlert();
                 }
                 else {
-                    new Alert("error", "hiba történt").showAlert();
+                    new Alert("error", "error").showAlert();
                 }
             })
         }
@@ -57,7 +57,7 @@ const AllOrdersSingleOrder = (props) => {
             return resp.data
         }
         catch (e) {
-            new Alert("error", "hiba történt!").showAlert();
+            new Alert("error", "error").showAlert();
         }
     }
 
@@ -67,7 +67,7 @@ const AllOrdersSingleOrder = (props) => {
             return resp.data
         }
         catch (e) {
-            new Alert("error", "hiba történt!").showAlert();
+            new Alert("error", "error").showAlert();
         }
     }
     const deleteOrder = async () => {
@@ -76,7 +76,7 @@ const AllOrdersSingleOrder = (props) => {
             return resp.data
         }
         catch (e) {
-            new Alert("error", "hiba történt!").showAlert();
+            new Alert("error", "error").showAlert();
         }
     }
 
@@ -105,9 +105,9 @@ const AllOrdersSingleOrder = (props) => {
         <p>{props?.data.name}</p>
         <p>{props?.data.price} forint</p>
         <div className="single__actionsContainer">
-            {props?.data.finished ? "" : <p onClick={e => handleSetOrderFinished()}>Lezárás</p>}
-            {props?.data.isPaid ? "" : <p onClick={e => {handleSetOrderPaid()}}>Fizetve</p> }
-            <p onClick={e => handleDeleteOrder()}>Törlés</p>
+            {props?.data.finished ? "" : <p onClick={e => handleSetOrderFinished()}>Close</p>}
+            {props?.data.isPaid ? "" : <p onClick={e => {handleSetOrderPaid()}}>Payed</p> }
+            <p onClick={e => handleDeleteOrder()}>Delete</p>
         </div>
     </div>
 }

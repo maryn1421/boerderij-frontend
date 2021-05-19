@@ -33,20 +33,20 @@ const Order = (props) => {
             return resp.data;
 
         } catch (e) {
-            new Alert("error", "Szerver hiba a rendelés módosítása során").showAlert()
+            new Alert("error", "Server error while modifying order.").showAlert()
         }
     }
 
 
     const finishOrder = () => {
-       if  (window.confirm("Biztosan lezárod a " + props.data.name  + " nevü rendelést?")) {
+       if  (window.confirm("Are you sure to set " + props.data.name  + " status to closed?")) {
            saveFinishOrder().then(response => {
                if (response !== undefined) {
                    new Alert("success", response).showAlert()
                    forceUpdate();
                }
                else {
-                   new Alert("error", "Hiba a rendelés módosítása során").showAlert()
+                   new Alert("error", "Server error while modifying order.").showAlert()
 
                }
            })
