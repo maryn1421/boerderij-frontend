@@ -32,7 +32,7 @@ const LoginForm = () => {
                 window.location.href = "/farm";
             }
             else {
-                new Alert("error", "Sikertelen bejelentkezés!").showAlert()
+                new Alert("error", "Login failed!").showAlert()
             }
         })
 
@@ -45,7 +45,7 @@ const LoginForm = () => {
             return resp.data
         }
         catch (e) {
-            new Alert("error", "Szerver hiba a bejelentkezés során!")
+            new Alert("error", "Server error, while logging in!")
         }
     }
 

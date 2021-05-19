@@ -20,7 +20,7 @@ const FarmSettings = () => {
                 new Alert("success", response).showAlert();
             }
             else {
-               new Alert("error", "Sikertelen hozzáadás").showAlert()
+               new Alert("error", "Adding failed!").showAlert()
             }
         })
 
@@ -58,7 +58,7 @@ const FarmSettings = () => {
                 new Alert("success", response).showAlert();
             }
             else {
-                new Alert("error", "Hiba az új kiadási opció mentése során!").showAlert();
+                new Alert("error", "Error while adding new expense!").showAlert();
             }
         })
     }
@@ -66,17 +66,17 @@ const FarmSettings = () => {
     return <div className="farmSettings__main">
             <div className="farmSettings__inputs">
                 <div className="farmSettings__newIncomeOption">
-                    <h3>Új bevételi opció hozzáadása:</h3>
+                    <h3>Add new income type:</h3>
                     <form onSubmit={handleNewIncomeOption}>
                         <input required={"required"} id={"newIncomeInput"} type="text"/> <br/>
-                        <button>Hozzáadás</button>
+                        <button>Add</button>
                     </form>
                 </div>
                 <div className="farmSettings__newIncomeOption">
-                    <h3>Új kiadási opció hozzáadása:</h3>
+                    <h3>Add new expense type:</h3>
                     <form onSubmit={handleNewCostOption}>
                         <input required={"required"} id={"newCostInput"} type="text"/> <br/>
-                        <button>Hozzáadás</button>
+                        <button>Add</button>
                     </form>
                 </div>
             </div>

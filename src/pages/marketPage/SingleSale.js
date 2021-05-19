@@ -15,7 +15,7 @@ const SingleSale = (props) => {
         <img className={"single_image"} src={API_BASE_URL + "/market/image/" + props?.data.photoName } alt=""/>
         <div className="singleSale__description">
             <p>{props.data.title}</p>
-            <p>{new Intl.NumberFormat().format(props.data.price)} Forint</p>
+            <p>{new Intl.NumberFormat().format(props.data.price)} HUF</p>
 
             <div className="singleSale__bottomContainer">
                 <p>{props.data.province},</p>

@@ -81,7 +81,7 @@ const Orders = () => {
                 document.getElementById("new-order").reset()
             }
             else {
-                new Alert("error", "Sikertelen rendelés hozzáadás!").showAlert()
+                new Alert("error", "Adding order failed!").showAlert()
             }
 
         })
@@ -94,7 +94,7 @@ const Orders = () => {
             return resp.data
         }
         catch (e) {
-            new Alert("error", "Szerver hiba a rendelés hozzáadás során").showAlert()
+            new Alert("error", "Server error while adding order!").showAlert()
         }
     }
 
@@ -105,10 +105,10 @@ const Orders = () => {
     if (orders.orderDayList) {
         return <div className="orders__main">
             <div className="income__newIncome">
-                <a href="/farm/all-order"><h4>Összes rendelés</h4></a>
-                <h4>Rendelés hozzáadása</h4>
+                <a href="/farm/all-order"><h4>All orders</h4></a>
+                <h4>Add order</h4>
                 <form id={"new-order"} onSubmit={handleNewOrder}>
-                    <input id={"order__name"} required={"required"} placeholder={"rendelés neve"} type="text"/> <br/>
+                    <input id={"order__name"} required={"required"} placeholder={"Order name"} type="text"/> <br/>
                     <select className={"income__select"} name="type" id="order__option">
                         {
                             options.map(option => (
@@ -117,12 +117,12 @@ const Orders = () => {
                         }
 
                     </select> <br/>
-                    <input id={"order__price"} required={"required"} placeholder={"rendelés összege"} type="text"/> <br/>
+                    <input id={"order__price"} required={"required"} placeholder={"Price of order"} type="text"/> <br/>
                     <input id={"order__date"} required={"required"} type="date"/> <br/>
-                    <button type={"submit"}>Hozzáadás</button>
+                    <button type={"submit"}>Add</button>
                 </form>
             </div>
-            <h4>Rendelések:</h4>
+            <h4>Orders:</h4>
             <div className="orders__refreshButtonContainer"><button onClick={event => {refresh()}} className="refresh__button">↻</button></div>
                 <OrderLister data={orders} />
         </div>

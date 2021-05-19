@@ -7,9 +7,9 @@ const Login = () => {
     document.body.style.backgroundImage = "url('/images/farm-background.jpg')";
     return <div className="login-container">
             <div className="login-content">
-                <h1 className="login-title">Belépés</h1>
+                <h1 className="login-title">Login</h1>
                 <LoginForm />
-                <span className="signup-link">Új vagy? <Link to={"/signup"}>Regisztráció</Link></span>
+                <span className="signup-link">Are you new? <Link to={"/signup"}>Registration</Link></span>
             </div>
     </div>
 }
