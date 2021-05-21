@@ -84,7 +84,7 @@ const MarketSingleSalePage = () => {
                 <img className="saleImage" src={API_BASE_URL + "/market/image/" + sale?.photoName} alt=""/>
             </div>
             <p className="salePrice">
-                {new Intl.NumberFormat().format(sale?.price)} HUF
+                {new Intl.NumberFormat().format(sale?.price)} Forint
             </p>
             <div className="saleDataContainer">
                 <section>{sale?.description}</section>

@@ -74,7 +74,7 @@ const Income = () => {
                 document.getElementById("new-income").reset()
             }
             else {
-                new Alert("error", "Adding failed!").showALert()
+                new Alert("error", "Sikertelen hozzáadás").showALert()
             }
         })
     }
@@ -102,7 +102,7 @@ const Income = () => {
         return resp.data
 
         }catch (e) {
-            new Alert("error", "Server error!").showAlert();
+            new Alert("error", "Szerver hiba!").showAlert();
         }
     }
 
@@ -124,9 +124,9 @@ const Income = () => {
 
     return <div className="income__Main">
             <div className="income__newIncome">
-                <h4>New Income</h4>
+                <h4>Új Bevétel</h4>
                 <form id={"new-income"} onSubmit={submitNewIncome}>
-                    <input id={"income__name"} required={"required"} placeholder={"Name of income"} type="text"/> <br/>
+                    <input id={"income__name"} required={"required"} placeholder={"bevétel neve"} type="text"/> <br/>
                     <select className={"income__select"} name="type" id="income__option">
                         {
                          options.map(option => (
@@ -135,16 +135,16 @@ const Income = () => {
                         }
                         
                     </select> <br/>
-                    <input id={"income__price"} required={"required"} placeholder={"Price of income"} type="text"/> <br/>
+                    <input id={"income__price"} required={"required"} placeholder={"bevétel összege"} type="text"/> <br/>
                     <input id={"income__date"} required={"required"} type="date"/> <br/>
-                    <button type={"submit"}>Add</button>
+                    <button type={"submit"}>Hozzáadás</button>
                 </form>
             </div>
             <div className="incomeFilter__main">
                 <div className="filter__container">
-                    <h4>Filter incomes</h4>
+                    <h4>Bevételek szűrése</h4>
                     <select onChange={handleFilterChange} name="income-filter" id="income-filter">
-                        <option value="all">All incomes</option>
+                        <option value="all">Összes rendelés</option>
                         {options.map(option => (
                             <option value={option.id}>{option.name}</option>
                         ))}

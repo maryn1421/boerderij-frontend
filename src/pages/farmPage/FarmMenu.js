@@ -15,39 +15,39 @@ const FarmMenu = () => {
         <div className="farmPage__menu">
             <Link to={"/farm/costs"}>
                 <div className="farmPage__menuItem">
-                    <p>Expenses</p>
+                    <p>Kiadások</p>
                 </div>
             </Link>
 
             <Link to={'/farm/incomes'}>
                 <div className="farmPage__menuItem">
-                    <p>Incomes</p>
+                    <p>Bevételek</p>
                 </div>
             </Link>
 
             <div className="farmPage__menuItem">
-                <p>Animals</p>
+                <p>Állatok</p>
             </div>
             <Link to={'/farm/orders'}>
                 <div className="farmPage__menuItem">
-                    <p>Orders</p>
+                    <p>Rendelések</p>
                 </div>
             </Link>
             <Link to={"/market"}>
                 <div className="farmPage__menuItem">
-                    <p>Market</p>
+                    <p>Piac</p>
                 </div>
             </Link>
             <Link to={"/farm/settings"}>
                 <div className="farmPage__menuItem">
-                    <p>Settings</p>
+                    <p>Beállítások</p>
                 </div>
             </Link>
 
             <div className="farmPage__menuItem">
                 <p onClick={e => {
                     logout()
-                }}>Logout </p>
+                }}>Kijelentkezés </p>
             </div>
         </div>
     </div>

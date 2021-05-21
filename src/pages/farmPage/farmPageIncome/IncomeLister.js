@@ -35,18 +35,18 @@ const IncomeLister = (props) => {
 
 
     return <div className="IncomeLister__main">
-        <h3>List of incomes:</h3>
+        <h3>Bevételek listája:</h3>
         <div className="income__total">
-            <p>Number of incomes: {props.data.length}    Total value of incomes: {calculateTotal()}</p>
+            <p>Bevételek száma: {props.data.length}    Bevételek összértéke: {calculateTotal()}</p>
         </div>
             <div className="incomeLister__tableContainer">
                 <table className={"income__table"}>
                         <thead>
                         <tr>
-                        <th>Date</th>
-                        <th>Name</th>
-                        <th>Type</th>
-                        <th>Price</th>
+                        <th>Dátum</th>
+                        <th>Név</th>
+                        <th>Típus</th>
+                        <th>Összeg</th>
                         </tr>
                         </thead>
                     <tbody>

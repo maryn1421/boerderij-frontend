@@ -35,9 +35,9 @@ const NewSale = () => {
                     addImageToSale(formData, resp.id).then(response => {
                         if (response !== undefined) {
                             document.getElementById("new-sale-form").reset()
-                            new Alert("success", "Order added successfully!").showAlert()
+                            new Alert("success", "Sikeres rendelés hozzáadás").showAlert()
                         } else {
-                            new Alert("error", "Error while adding order!").showAlert()
+                            new Alert("error", "Hiba a rendelés hozzáadása során").showAlert()
                         }
                     })
                 }
@@ -71,23 +71,23 @@ const NewSale = () => {
 
     if (cookies.user?.token) {
         return <div className="newSale__main">
-            <h1>Put advertisement</h1>
+            <h1>HIRDETÉS FELADÁSA</h1>
             <div className="newSale__formContainer">
                 <form id={"new-sale-form"} onSubmit={submitNewSale}>
-                    <label>Advertisement title: </label>
+                    <label>Hirdetés szöveg címe: </label>
                     <input type="text" name={"title"} id={"title"} required={"required"}/>
 
-                    <label>Advertisement text: </label>
+                    <label>Hirdetés szövege: </label>
                     <input type="text" name={"description"} id={"description"} required={"required"}/>
 
 
-                    <label>Type:</label>
+                    <label>Típus:</label>
                     <select name="type" id="type">
-                        <option value="ANIMAL">Animal</option>
-                        <option value="FOOD">Forage</option>
-                        <option value="PRODUCT">Product</option>
+                        <option value="ANIMAL">Állat</option>
+                        <option value="FOOD">Takarmány</option>
+                        <option value="PRODUCT">Termék</option>
                     </select>
-                    <label>County:</label>
+                    <label>Megye:</label>
                     <select name="province" id="province">
                         <option value="Bács-kiskun">Bács-kiskun</option>
                         <option value="Baranya">Baranya</option>
@@ -111,22 +111,22 @@ const NewSale = () => {
                         <option value="Zala">Zala</option>
                     </select>
 
-                    <label>City: </label>
+                    <label>Település:</label>
                     <input type="text" name={"city"} id={"city"} required={"required"}/>
 
-                    <label>Price: (HUF) </label>
+                    <label>Hirdetés ára: (forint) </label>
                     <input type="number" id={"price"} name={"price"} required={"required"}/>
 
-                    <label>Start date: </label>
+                    <label>Hirdetés kezdete: </label>
                     <input type="date" name={"price"} id={"start-date"} required={"required"}/>
 
-                    <label>End date: </label>
+                    <label>Hirdetés vége:</label>
                     <input type="date" name={"price"} id={"end-date"} required={"required"}/>
 
-                    <label>Photo: </label>
+                    <label>Fénykép: </label>
                     <input type="file" name={"image"} id={"image"} required={"required"}/>
 
-                    <button type={"submit"}>Add</button>
+                    <button type={"submit"}>Feladás</button>
                 </form>
             </div>
 
@@ -134,9 +134,9 @@ const NewSale = () => {
     }
     else {
         return <div className="private__main">
-            <p>You need to log in first! D:</p>
-            <a href="/login">Login</a> <br/>
-            <a href="/market">Back</a>
+            <p>Ehhez a funkcióhoz belépés szükséges! D:</p>
+            <a href="/login">Belépés</a> <br/>
+            <a href="/market">Vissza</a>
         </div>
     }
 }
