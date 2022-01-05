@@ -18,7 +18,7 @@ import NewSale from "./pages/marketPage/marketNewSale/NewSale";
 import MarketSingleSalePage from "./pages/marketPage/marketSingleSalePage/MarketSingleSalePage";
 import {useCookies} from "react-cookie";
 import MarketProfile from "./pages/marketPage/MarketProfile/MarketProfile";
-
+import IdeasPage from "./pages/ideasPage/ideasPage";
 
 
 const PrivateRoute = ({ component, ...options }) => {
@@ -49,6 +49,8 @@ const App = () => {
         <Router>
             <Switch>
                 <Route exact path="/" component={MainPage} />
+                <Route exact path="/ideas" component={IdeasPage} />
+
                 <Route exact path="/patch-list" component={PatchList} />
                 <Route exact path="/login" component={Login} />
                 <Route exact path="/signup" component={Register}/>
